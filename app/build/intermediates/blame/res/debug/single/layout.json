@@ -512,6 +512,10 @@
         "source": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Hermes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.2.0\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dettaglio_prodotto.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\layout\\activity_dettaglio_prodotto.xml"
+    },
+    {
         "merged": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.2.1\\res\\layout\\design_layout_tab_text.xml"
     },

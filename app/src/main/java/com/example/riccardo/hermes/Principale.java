@@ -62,6 +62,9 @@ public class Principale extends AppCompatActivity
             }
         });
 
+        FragmentManager fragmentManager = getFragmentManager();
+        Fragment esplora = new Esplora();
+        fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
     }
 
     @Override

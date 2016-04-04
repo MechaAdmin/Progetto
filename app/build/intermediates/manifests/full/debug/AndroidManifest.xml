@@ -29,6 +29,7 @@
             android:label="@string/title_activity_principale"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.riccardo.hermes.Profilo" />
+        <activity android:name="com.example.riccardo.hermes.dettaglio_prodotto" />
     </application>
 
 </manifest>
