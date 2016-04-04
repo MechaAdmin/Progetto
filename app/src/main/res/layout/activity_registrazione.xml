@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_alignBottom="@+id/txtVenditaNome"
+    android:layout_centerHorizontal="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.riccardo.hermes.Registrazione">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtVenditaNome"
+            android:hint="Nome"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="Cognome"
+            android:id="@+id/txtCognome"
+            android:layout_below="@+id/txtVenditaNome"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txtVenditaNome" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/txtUsernameNavBar"
+            android:hint="E-mail"
+            android:layout_below="@+id/txtIndirizzo"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txtPassword" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="Password"
+            android:id="@+id/txtPassword"
+            android:layout_below="@+id/txtUsernameNavBar"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txtCitta" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:id="@+id/CheckTermini"
+            android:layout_below="@+id/txtPassword"
+            android:layout_alignParentStart="true"
+            android:text="Accetto i termini" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtUserName"
+            android:hint="Username"
+            android:layout_below="@+id/txtCognome"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txtCognome" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/txtDataNascita"
+            android:hint="Data di nascita"
+            android:layout_below="@+id/txtUserName"
+            android:layout_alignEnd="@+id/txtUserName"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtIndirizzo"
+            android:hint="Indirizzo"
+            android:layout_below="@+id/txtCap"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txtUsernameNavBar" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCitta"
+            android:hint="Città"
+            android:layout_below="@+id/txtDataNascita"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtCap"
+            android:hint="Cap"
+            android:layout_below="@+id/txtCitta"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txtIndirizzo" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrati"
+            android:id="@+id/btnAggiungiVendita"
+            android:layout_below="@+id/CheckTermini"
+            android:layout_centerHorizontal="true" />
+
+
+
+    </RelativeLayout>
+</ScrollView>
+
