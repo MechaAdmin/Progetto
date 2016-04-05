@@ -47,7 +47,7 @@ public class dettaglio_prodotto extends AppCompatActivity {
         descrizione = (TextView)findViewById(R.id.txtDettaglioDescrizione);
         contattaVenditore = (Button)findViewById(R.id.btnDettaglioContattaVenditore);
         imgProdotto = (ImageView)findViewById(R.id.imgDettaglioImmagine);
-        //h
+        //hgg
         OttieniJson(JSON_URL+idProdotto);
         CaricaImmagine();
     }
