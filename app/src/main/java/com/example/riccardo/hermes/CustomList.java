@@ -39,7 +39,9 @@ public class CustomList extends ArrayAdapter<String> {
         TextView txtPrezzo = (TextView) listViewItem.findViewById(R.id.txtListPrezzo);
         txtNomeProdotto.setText(nomeProdotto[position]);
         txtPrezzo.setText(prezzo[position]);
-        imgProdotto.setImageBitmap(Bitmap.createScaledBitmap(immagini[position],100,50,false));
+        txtId.setText(id[position]);
+        //imgProdotto.setImageBitmap(Bitmap.createScaledBitmap(immagini[position],250,200,false));
+        imgProdotto.setImageBitmap(immagini[position]);
         return  listViewItem;
     }
 }

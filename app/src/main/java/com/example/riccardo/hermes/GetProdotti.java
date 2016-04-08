@@ -56,12 +56,12 @@ public class GetProdotti {
         id = new String[stringJson.length()];
         for(int i=0;i< stringJson.length();i++){
 
-            prezzo[i] = stringJson.getJSONObject(i).getString("prezzo");
+            prezzo[i] = stringJson.getJSONObject(i).getString("prezzo") + "€";
             JSONObject jsonObject = stringJson.getJSONObject(i);
             bitmaps[i]=getImage(jsonObject);
             nomeProdotto[i] = stringJson.getJSONObject(i).getString("nomeProdotto");
             id[i] = stringJson.getJSONObject(i).getString("id");
-            Log.d("Prodotto",id[i] + nomeProdotto[i] +prezzo[i] + bitmaps[i] );
+            //Log.d("Prodotto",id[i] + nomeProdotto[i] +prezzo[i] + bitmaps[i] );
         }
     }
 }

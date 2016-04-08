@@ -2,14 +2,19 @@ package com.example.riccardo.hermes;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -23,12 +28,13 @@ import java.util.HashMap;
 /**
  * Created by riccardo on 08/04/16.
  */
-public class Esplora2 extends Fragment {
+public class Esplora2 extends Fragment implements AdapterView.OnItemClickListener{
     ListView lista;
     GetProdotti getProdotti;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
         lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
+        lista.setOnItemClickListener(this);
         getJson();
         return  fragmentView;
     }
@@ -104,5 +110,15 @@ public class Esplora2 extends Fragment {
         }
         GetURLs gu = new GetURLs();
         gu.execute("http://MechaVendor.16mb.com/jsonProdotti2.php");
+    }
+
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+        TextView c = (TextView) view.findViewById(R.id.txtListId);
+        String idProdotto = c.getText().toString();
+        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
+        intent.putExtra("id", idProdotto);
+        startActivity(intent);
+
     }
 }
