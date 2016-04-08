@@ -654,7 +654,6 @@ int id ifRoom 0x7f0c0035
 int id image 0x7f0c003f
 int id imgDettaglioImmagine 0x7f0c006f
 int id imgListImmagine 0x7f0c0095
-int id imgProva 0x7f0c008d
 int id imgVenditaImmagine 0x7f0c0091
 int id immagineActivityProfilo 0x7f0c0078
 int id info 0x7f0c00a2
@@ -663,6 +662,7 @@ int id left 0x7f0c0023
 int id line1 0x7f0c009c
 int id line3 0x7f0c00a0
 int id listMode 0x7f0c000b
+int id listProdotti 0x7f0c008d
 int id list_item 0x7f0c0041
 int id media_actions 0x7f0c009a
 int id middle 0x7f0c0032

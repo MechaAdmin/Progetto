@@ -59,7 +59,7 @@ public class Esplora extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
         //lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
-        imgProva = (ImageView)fragmentView.findViewById(R.id.imgProva);
+
         listaProdotti = new ArrayList<HashMap<String,Object>>();
         OttieniJson(JSON_URL);
         Bitmap mIcon = null;

@@ -63,7 +63,7 @@ public class Principale extends AppCompatActivity
         });
 
         FragmentManager fragmentManager = getFragmentManager();
-        Fragment esplora = new Esplora();
+        Fragment esplora = new Esplora2();
         fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
     }
 
@@ -92,7 +92,7 @@ public class Principale extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_esplora) {
-            Fragment esplora = new Esplora();
+            Fragment esplora = new Esplora2();
             fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
         } else if (id == R.id.nav_vendi) {
             Fragment vendita = new Vendita2();
