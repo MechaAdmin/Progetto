@@ -95,7 +95,7 @@ public class Principale extends AppCompatActivity
             Fragment esplora = new Esplora();
             fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
         } else if (id == R.id.nav_vendi) {
-            Fragment vendita = new Vendita();
+            Fragment vendita = new Vendita2();
             fragmentManager.beginTransaction().replace(R.id.container,vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {
 

@@ -78,7 +78,7 @@ ADDED from /home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/AndroidM
 	android:name
 		ADDED from /home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/AndroidManifest.xml:25:19-42
 activity#com.example.riccardo.hermes.dettaglio_prodotto
-ADDED from /home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/AndroidManifest.xml:26:9-65
+ADDED from /home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/AndroidManifest.xml:26:9-56
 	android:name
 		ADDED from /home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/AndroidManifest.xml:26:19-53
 uses-sdk

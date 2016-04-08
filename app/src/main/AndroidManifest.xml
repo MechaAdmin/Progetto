@@ -23,7 +23,7 @@
             android:label="@string/title_activity_principale"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Profilo" />
-        <activity android:name=".dettaglio_prodotto"></activity>
+        <activity android:name=".dettaglio_prodotto" />
     </application>
 
 </manifest>
