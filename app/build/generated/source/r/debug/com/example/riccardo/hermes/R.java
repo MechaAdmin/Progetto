@@ -2353,6 +2353,7 @@ containing a value of this type.
         public static final int image=0x7f0c003f;
         public static final int imgDettaglioImmagine=0x7f0c006f;
         public static final int imgListImmagine=0x7f0c0095;
+        public static final int imgProva=0x7f0c008d;
         public static final int imgVenditaImmagine=0x7f0c0091;
         public static final int immagineActivityProfilo=0x7f0c0078;
         public static final int info=0x7f0c00a2;
@@ -2361,7 +2362,6 @@ containing a value of this type.
         public static final int line1=0x7f0c009c;
         public static final int line3=0x7f0c00a0;
         public static final int listMode=0x7f0c000b;
-        public static final int listProdotti=0x7f0c008d;
         public static final int list_item=0x7f0c0041;
         public static final int media_actions=0x7f0c009a;
         public static final int middle=0x7f0c0032;
