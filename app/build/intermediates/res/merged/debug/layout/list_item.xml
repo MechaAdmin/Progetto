@@ -12,31 +12,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtListNome"
+        android:id="@+id/txtListId"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:visibility="gone"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imgListImmagine"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txtListId"
+        android:layout_row="1"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="ciao"
+        android:id="@+id/txtListNome"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/txtListPrezzo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtListPrezzo"
+        android:text="prezzo"
+        android:layout_gravity="bottom"
+        android:layout_row="2"
+        android:layout_column="1"
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toEndOf="@+id/imgListImmagine"
+        android:layout_marginStart="41dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtListId"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:visibility="gone" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imgListImmagine"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/txtListId" />
 </RelativeLayout>

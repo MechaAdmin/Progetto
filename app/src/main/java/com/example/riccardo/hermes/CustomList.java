@@ -40,8 +40,8 @@ public class CustomList extends ArrayAdapter<String> {
         txtNomeProdotto.setText(nomeProdotto[position]);
         txtPrezzo.setText(prezzo[position]);
         txtId.setText(id[position]);
-        //imgProdotto.setImageBitmap(Bitmap.createScaledBitmap(immagini[position],250,200,false));
-        imgProdotto.setImageBitmap(immagini[position]);
+        imgProdotto.setImageBitmap(Bitmap.createScaledBitmap(immagini[position],250,200,false));
+        //imgProdotto.setImageBitmap(immagini[position]);
         return  listViewItem;
     }
 }
