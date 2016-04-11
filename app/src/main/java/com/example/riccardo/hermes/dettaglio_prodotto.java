@@ -85,7 +85,6 @@ public class dettaglio_prodotto extends AppCompatActivity {
                 }
             }
             protected void onPostExecute(String s) {
-                //Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
                 super.onPostExecute(s);
                 loading.dismiss();
                 compilaCampi(s);

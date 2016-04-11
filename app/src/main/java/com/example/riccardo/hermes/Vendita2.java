@@ -43,7 +43,6 @@ public class Vendita2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView =  inflater.inflate(R.layout.fragment_vendita,null);
         username = this.getArguments().getString("username");
-
         txtNome = (TextView)fragmentView.findViewById(R.id.txtVenditaNome);
         txtPrezzo = (TextView)fragmentView.findViewById(R.id.txtVenditaPrezzo);
         txtDescrizione = (TextView)fragmentView.findViewById(R.id.txtVenditaDescrizione);
