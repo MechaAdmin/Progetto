@@ -28,12 +28,13 @@ public class Principale extends AppCompatActivity
 
     private ImageView profiloImg;
     private final String imageURL = "http://mechavendor.16mb.com/getImage.php?userName=";
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principale);
         Intent intent = getIntent();
-        String username = intent.getStringExtra(Login.USER_NAME);
+        username = intent.getStringExtra(Login.USER_NAME);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,13 +90,16 @@ public class Principale extends AppCompatActivity
 
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Bundle b = new Bundle();
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_esplora) {
             Fragment esplora = new Esplora2();
             fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
         } else if (id == R.id.nav_vendi) {
+            b.putString("username",username);
             Fragment vendita = new Vendita2();
+            vendita.setArguments(b);
             fragmentManager.beginTransaction().replace(R.id.container,vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {
 

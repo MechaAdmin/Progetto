@@ -102,7 +102,6 @@ public class dettaglio_prodotto extends AppCompatActivity {
             nomeProdotto.setText(c.getString("nomeProdotto"));
             prezzo.setText(c.getString("prezzo")+"€");
             descrizione.setText(c.getString("descrizione"));
-            Toast.makeText(getApplicationContext(),c.getString("immagine"),Toast.LENGTH_SHORT).show();
             new DownLoadImageTask(imgProdotto).execute(c.getString("immagine"));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -127,10 +126,6 @@ public class dettaglio_prodotto extends AppCompatActivity {
             return logo;
         }
 
-        /*
-            onPostExecute(Result result)
-                Runs on the UI thread after doInBackground(Params...).
-         */
         protected void onPostExecute(Bitmap result){
             imageView.setImageBitmap(result);
         }

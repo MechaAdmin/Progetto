@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.design.widget.NavigationView;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,8 +39,11 @@ public class Vendita2 extends Fragment {
     private Button btnCaricaImmagine;
     private ImageView immagine;
     private Bitmap bitmap;
+    private String username;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView =  inflater.inflate(R.layout.fragment_vendita,null);
+        username = this.getArguments().getString("username");
+
         txtNome = (TextView)fragmentView.findViewById(R.id.txtVenditaNome);
         txtPrezzo = (TextView)fragmentView.findViewById(R.id.txtVenditaPrezzo);
         txtDescrizione = (TextView)fragmentView.findViewById(R.id.txtVenditaDescrizione);
@@ -76,7 +80,6 @@ public class Vendita2 extends Fragment {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
                 immagine.setImageBitmap(bitmap);
             } catch (IOException e) {
-                Log.e("x", e.getMessage());
                 Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
             }
         }
@@ -118,6 +121,7 @@ public class Vendita2 extends Fragment {
                 data.put("nomeProdotto",nomeProdotto);
                 data.put("prezzo",prezzo);
                 data.put("descrizione",descrizione);
+                data.put("venditore",username);
                 String result = rh.sendPostRequest("http://mechavendor.16mb.com/uploadProdotti.php",data);
 
                 return result;
