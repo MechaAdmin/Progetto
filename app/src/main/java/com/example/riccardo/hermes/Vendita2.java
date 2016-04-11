@@ -77,7 +77,7 @@ public class Vendita2 extends Fragment {
             filePath = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
-                immagine.setImageBitmap(bitmap);
+                immagine.setImageBitmap(resizeImage(bitmap));
             } catch (IOException e) {
                 Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
             }
@@ -129,5 +129,27 @@ public class Vendita2 extends Fragment {
 
         UploadDati ui = new UploadDati();
         ui.execute(bitmap);
+    }
+    Bitmap resizeImage(Bitmap image){
+        double height = image.getHeight();
+        double width = image.getWidth();
+
+
+
+        if(height > 4096){
+            double scale = height - 4096;
+            scale = scale / height;
+            width = width * scale;
+            image.setHeight(4096);
+            image.setWidth((int)width);
+        }
+        if(width > 4096){
+            double scale = width - 4096;
+            scale = scale / width;
+            height = height * scale;
+            image.setHeight((int)height);
+            image.setWidth(4096);
+        }
+        return image;
     }
 }
