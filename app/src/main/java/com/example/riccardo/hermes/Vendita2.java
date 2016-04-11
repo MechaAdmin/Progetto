@@ -77,7 +77,8 @@ public class Vendita2 extends Fragment {
             filePath = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
-                immagine.setImageBitmap(resizeImage(bitmap));
+                Bitmap mutableBitmap = bitmap.copy(Bitmap.Config.ARGB_8888,true);
+                immagine.setImageBitmap(resizeImage(mutableBitmap));
             } catch (IOException e) {
                 Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
             }
