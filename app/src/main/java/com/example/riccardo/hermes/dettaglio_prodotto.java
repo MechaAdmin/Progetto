@@ -35,7 +35,6 @@ public class dettaglio_prodotto extends AppCompatActivity {
     JSONArray informazioni;
     String idProdotto;
     private static final String JSON_URL = "http://mechavendor.16mb.com/dettaglioProdotto.php?id=";
-    private final String imageURL = "http://mechavendor.16mb.com/dettaglioProdottoImmagine.php?id=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +46,7 @@ public class dettaglio_prodotto extends AppCompatActivity {
         descrizione = (TextView)findViewById(R.id.txtDettaglioDescrizione);
         contattaVenditore = (Button)findViewById(R.id.btnDettaglioContattaVenditore);
         imgProdotto = (ImageView)findViewById(R.id.imgDettaglioImmagine);
-        OttieniJson(JSON_URL+idProdotto);
-        CaricaImmagine();
+        OttieniJson(JSON_URL + idProdotto);
     }
     private void OttieniJson(String url) {
         class GetJSON extends AsyncTask<String, Void, String> {
@@ -85,7 +83,7 @@ public class dettaglio_prodotto extends AppCompatActivity {
                 }
             }
             protected void onPostExecute(String s) {
-                Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
+                //Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT);
                 super.onPostExecute(s);
                 loading.dismiss();
                 compilaCampi(s);
@@ -102,47 +100,17 @@ public class dettaglio_prodotto extends AppCompatActivity {
             nomeProdotto.setText(c.getString("nomeProdotto"));
             prezzo.setText(c.getString("prezzo")+"€");
             descrizione.setText(c.getString("descrizione"));
+            Toast.makeText(getApplicationContext(),c.getString("immagine"),Toast.LENGTH_SHORT).show();
+            try{
+                URL url = new URL(c.getString("immagine"));
+                Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                imgProdotto.setImageBitmap(image);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-    private void CaricaImmagine() {
-        class GetImage extends AsyncTask<String,Void,Bitmap>{
-            ImageView bmImage;
-            ProgressDialog loading;
-
-            public GetImage(ImageView bmImage) {
-                this.bmImage = bmImage;
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                super.onPostExecute(bitmap);
-                loading.dismiss();
-                bmImage.setImageBitmap(bitmap);
-            }
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(dettaglio_prodotto.this,"Downloading Image","Please wait...",true,true);
-            }
-
-            @Override
-            protected Bitmap doInBackground(String... strings) {
-                String url = imageURL + strings[0];
-                Bitmap mIcon = null;
-                try {
-                    InputStream in = new java.net.URL(url).openStream();
-                    mIcon = BitmapFactory.decodeStream(in);
-                } catch (Exception e) {
-                    Log.e("Error", e.getMessage());
-                }
-                return mIcon;
-            }
-        }
-
-        GetImage gi = new GetImage(imgProdotto);
-        gi.execute(idProdotto);
     }
 }
