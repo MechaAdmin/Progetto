@@ -1,2 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.2.1_e7095ca78f5237a06309248f2e986640abf10ef3.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.1_f39a9e3e8729765469d37a0e3da1b33372147aaa.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_7c9a37f19dc7b5f7ecce00e33e70c612d3481acf.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.2.1_b237b5f258f202784beaa5ced25838b288f422e6.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_b3c4f0c9be12e1a382461459f2622661203ecb88.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_2ed9efefe655aa284d17cce2e38ca48fe3a553d9.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.1_34408f821ea1e27c8122c0d42921c151f6258222.jar" />
+    </item>
+    <item
+        jar="C:\Users\tomma\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="C:\Users\tomma\Desktop\ProgettoProg3\Progetto\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_2b965b700efb3e41dbcaa30f9d12432ea39e8f5f.jar" />
+    </item>
+
+</items>
