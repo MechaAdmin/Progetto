@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -101,16 +103,36 @@ public class dettaglio_prodotto extends AppCompatActivity {
             prezzo.setText(c.getString("prezzo")+"€");
             descrizione.setText(c.getString("descrizione"));
             Toast.makeText(getApplicationContext(),c.getString("immagine"),Toast.LENGTH_SHORT).show();
-            try{
-                URL url = new URL(c.getString("immagine"));
-                Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                imgProdotto.setImageBitmap(image);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
+            new DownLoadImageTask(imgProdotto).execute(c.getString("immagine"));
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+    }
+    private class DownLoadImageTask extends AsyncTask<String,Void,Bitmap>{
+        ImageView imageView;
+
+        public DownLoadImageTask(ImageView imageView){
+            this.imageView = imageView;
+        }
+
+        protected Bitmap doInBackground(String...urls){
+            String urlOfImage = urls[0];
+            Bitmap logo = null;
+            try{
+                InputStream is = new URL(urlOfImage).openStream();
+                logo = BitmapFactory.decodeStream(is);
+            }catch(Exception e){ // Catch the download exception
+                e.printStackTrace();
+            }
+            return logo;
+        }
+
+        /*
+            onPostExecute(Result result)
+                Runs on the UI thread after doInBackground(Params...).
+         */
+        protected void onPostExecute(Bitmap result){
+            imageView.setImageBitmap(result);
         }
     }
 }
