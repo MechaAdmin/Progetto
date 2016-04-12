@@ -7,17 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 /**
  * Created by riccardo on 08/04/16.
  */
-public class CustomList extends ArrayAdapter<String> {
+public class CustomList extends ArrayAdapter<String>{
     private String[] prezzo;
     private String[] id;
     private Bitmap[] immagini;
-    private String[] nomeProdotto;
+    public String[] nomeProdotto;
     private Activity context;
 
     public CustomList(Activity context,String[] id,String[] nomeProdotto, String[] prezzo, Bitmap[] immagini) {
@@ -40,8 +42,10 @@ public class CustomList extends ArrayAdapter<String> {
         txtNomeProdotto.setText(nomeProdotto[position]);
         txtPrezzo.setText(prezzo[position]);
         txtId.setText(id[position]);
-        imgProdotto.setImageBitmap(Bitmap.createScaledBitmap(immagini[position],200,200,false));
-        //imgProdotto.setImageBitmap(immagini[position]);
+        //imgProdotto.setImageBitmap(Bitmap.createScaledBitmap(immagini[position],200,200,false));
+        imgProdotto.setImageBitmap(immagini[position]);
         return  listViewItem;
     }
+
+
 }

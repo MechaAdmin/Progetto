@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -36,6 +37,7 @@ public class dettaglio_prodotto extends AppCompatActivity {
     ImageView imgProdotto;
     JSONArray informazioni;
     String idProdotto;
+    String mailVenditore;
     private static final String JSON_URL = "http://mechavendor.16mb.com/dettaglioProdotto.php?id=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,15 @@ public class dettaglio_prodotto extends AppCompatActivity {
         contattaVenditore = (Button)findViewById(R.id.btnDettaglioContattaVenditore);
         imgProdotto = (ImageView)findViewById(R.id.imgDettaglioImmagine);
         OttieniJson(JSON_URL + idProdotto);
+        contattaVenditore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                intent.putExtra(Intent.EXTRA_EMAIL, "ciao@gmail.com");
+                startActivity(intent);
+            }
+        });
     }
     private void OttieniJson(String url) {
         class GetJSON extends AsyncTask<String, Void, String> {
@@ -101,6 +112,7 @@ public class dettaglio_prodotto extends AppCompatActivity {
             nomeProdotto.setText(c.getString("nomeProdotto"));
             prezzo.setText(c.getString("prezzo")+"€");
             descrizione.setText(c.getString("descrizione"));
+            mailVenditore = c.getString("mail");
             new DownLoadImageTask(imgProdotto).execute(c.getString("immagine"));
         } catch (JSONException e) {
             e.printStackTrace();

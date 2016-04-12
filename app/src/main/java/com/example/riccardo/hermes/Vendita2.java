@@ -146,14 +146,14 @@ public class Vendita2 extends Fragment {
         if(height > 4096){
             double scale = height - 4096;
             scale = scale / height;
-            width = width * scale;
+            width = width - width * scale;
             image.setHeight(4096);
             image.setWidth((int)width);
         }
         if(width > 4096){
             double scale = width - 4096;
             scale = scale / width;
-            height = height * scale;
+            height = height - height * scale;
             image.setHeight((int)height);
             image.setWidth(4096);
         }

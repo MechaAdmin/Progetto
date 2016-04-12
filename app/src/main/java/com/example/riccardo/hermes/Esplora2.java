@@ -6,13 +6,17 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,11 +35,35 @@ import java.util.HashMap;
 public class Esplora2 extends Fragment implements AdapterView.OnItemClickListener{
     ListView lista;
     GetProdotti getProdotti;
+    EditText txtCerca;
+    private CustomList customList;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
+        final View fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
         lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
+        txtCerca = (EditText) fragmentView.findViewById(R.id.txtListCerca);
         lista.setOnItemClickListener(this);
+        lista.setTextFilterEnabled(true);
         getJson();
+
+        txtCerca.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                getProdotti.Filtra(s.toString());
+                customList = new CustomList(getActivity(),GetProdotti.idFiltrato,GetProdotti.nomeProdottoFiltrato,GetProdotti.prezzoFiltrato,GetProdotti.bitmapsFiltrato);
+                customList.notifyDataSetChanged();
+                lista.setAdapter(customList);
+            }
+        });
         return  fragmentView;
     }
     private void getDati(){
@@ -51,7 +79,7 @@ public class Esplora2 extends Fragment implements AdapterView.OnItemClickListene
             protected void onPostExecute(Void v) {
                 super.onPostExecute(v);
                 loading.dismiss();
-                CustomList customList = new CustomList(getActivity(),GetProdotti.id,GetProdotti.nomeProdotto,GetProdotti.prezzo,GetProdotti.bitmaps);
+                customList = new CustomList(getActivity(),GetProdotti.id,GetProdotti.nomeProdotto,GetProdotti.prezzo,GetProdotti.bitmaps);
                 lista.setAdapter(customList);
             }
 
