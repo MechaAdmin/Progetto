@@ -1704,12 +1704,12 @@
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Hermes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/fragment_esplora.xml",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/layout/fragment_esplora.xml"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/fragment_esplora.xml",
+        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/layout/fragment_esplora.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
@@ -1720,12 +1720,12 @@
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\layout\\app_bar_principale.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_content_include.xml"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Cartella senza nome\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Cartella senza nome\\Hermes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_content_include.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",

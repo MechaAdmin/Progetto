@@ -1,25 +1,36 @@
 package com.example.riccardo.hermes;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.app.SearchManager;
+import android.support.v7.widget.SearchView;
+import android.widget.SearchView.OnQueryTextListener;
 import org.json.JSONException;
 
 import java.io.BufferedReader;
@@ -32,55 +43,67 @@ import java.util.HashMap;
 /**
  * Created by riccardo on 08/04/16.
  */
-public class Esplora2 extends Fragment implements AdapterView.OnItemClickListener{
+public class Esplora2 extends Fragment implements AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener{
     ListView lista;
     GetProdotti getProdotti;
     EditText txtCerca;
     private CustomList customList;
-
+    View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
+        fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
         lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
-        txtCerca = (EditText) fragmentView.findViewById(R.id.txtListCerca);
         lista.setOnItemClickListener(this);
         lista.setTextFilterEnabled(true);
         getJson();
-
-        txtCerca.addTextChangedListener(new TextWatcher() {
+        return  fragmentView;
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.search_toolbar, menu);
+        MenuItem myActionMenuItem = menu.findItem( R.id.searchProdotti);
+        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+            public boolean onQueryTextSubmit(String query) {
+                return false;
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                getProdotti.Filtra(s.toString());
+            public boolean onQueryTextChange(String newText) {
+                getProdotti.Filtra(newText);
                 customList = new CustomList(getActivity(),GetProdotti.idFiltrato,GetProdotti.nomeProdottoFiltrato,GetProdotti.prezzoFiltrato,GetProdotti.bitmapsFiltrato);
                 customList.notifyDataSetChanged();
                 lista.setAdapter(customList);
+                return false;
             }
         });
-        return  fragmentView;
+    }
+
+    public boolean onNavigationItemSelected(MenuItem item) {
+        return true;
     }
     private void getDati(){
         class GetImages extends AsyncTask<Void,Void,Void>{
-            ProgressDialog loading;
+            ProgressDialog dialog;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(getActivity(),"Downloading images...","Please wait...",false,false);
+                dialog = ProgressDialog.show(getActivity(),"Download Prodotti","Attendi...",false,false);
             }
 
             @Override
             protected void onPostExecute(Void v) {
                 super.onPostExecute(v);
-                loading.dismiss();
                 customList = new CustomList(getActivity(),GetProdotti.id,GetProdotti.nomeProdotto,GetProdotti.prezzo,GetProdotti.bitmaps);
                 lista.setAdapter(customList);
+                dialog.dismiss();
             }
 
             @Override
@@ -98,18 +121,15 @@ public class Esplora2 extends Fragment implements AdapterView.OnItemClickListene
     }
     private void getJson() {
         class GetURLs extends AsyncTask<String,Void,String> {
-            ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(getActivity(),"Loading...","Please Wait...",true,true);
-            }
 
+            }
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
                 getProdotti = new GetProdotti(s);
                 getDati();
             }

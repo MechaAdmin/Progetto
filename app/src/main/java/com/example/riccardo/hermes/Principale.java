@@ -80,6 +80,7 @@ public class Principale extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         return true;
     }
 
@@ -118,7 +119,6 @@ public class Principale extends AppCompatActivity
 
 
             ImageView bmImage;
-            ProgressDialog loading;
 
             public GetImage(ImageView bmImage) {
                 this.bmImage = bmImage;
@@ -127,14 +127,12 @@ public class Principale extends AppCompatActivity
             @Override
             protected void onPostExecute(Bitmap bitmap) {
                 super.onPostExecute(bitmap);
-                loading.dismiss();
                 bmImage.setImageBitmap(bitmap);
             }
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(Principale.this,"Downloading Image","Please wait...",true,true);
             }
 
             @Override
