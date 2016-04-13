@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,127 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/values-w820dp/dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -144,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Cartella senza nome\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -155,7 +35,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Cartella senza nome\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -168,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -179,7 +59,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -192,7 +72,7 @@
         ]
     },
     {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -203,7 +83,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -216,7 +96,7 @@
         ]
     },
     {
-        "outputFile": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -227,7 +107,151 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 57,
+                        "endOffset": 344
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 57,
+                        "endOffset": 344
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 57,
+                        "endOffset": 344
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 57,
+                        "endOffset": 344
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Cartella senza nome\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3 (2)\\Hermes\\C:\\home\\riccardo\\Scrivania\\Cartella senza nome\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 57,
+                        "endOffset": 344
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 295,
+                        "endColumn": 57,
+                        "endOffset": 348
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Hermes\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
