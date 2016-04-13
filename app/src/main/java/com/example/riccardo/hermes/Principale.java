@@ -2,7 +2,6 @@ package com.example.riccardo.hermes;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -64,7 +63,7 @@ public class Principale extends AppCompatActivity
         });
 
         FragmentManager fragmentManager = getFragmentManager();
-        Fragment esplora = new Esplora2();
+        Fragment esplora = new Esplora();
         fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
     }
 
@@ -95,11 +94,11 @@ public class Principale extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_esplora) {
-            Fragment esplora = new Esplora2();
+            Fragment esplora = new Esplora();
             fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
         } else if (id == R.id.nav_vendi) {
             b.putString("username",username);
-            Fragment vendita = new Vendita2();
+            Fragment vendita = new Vendita();
             vendita.setArguments(b);
             fragmentManager.beginTransaction().replace(R.id.container,vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {

@@ -610,7 +610,7 @@ int id beginning 0x7f0c0031
 int id bottom 0x7f0c001d
 int id btnAccedi 0x7f0c0072
 int id btnAggiungiVendita 0x7f0c0081
-int id btnDettaglioContattaVenditore 0x7f0c0070
+int id btnDettaglioContattaVenditore 0x7f0c0069
 int id btnVenditaCaricaImmagine 0x7f0c0090
 int id buttonPanel 0x7f0c0044
 int id cancel_action 0x7f0c0098
@@ -652,7 +652,7 @@ int id homeAsUp 0x7f0c000f
 int id icon 0x7f0c0042
 int id ifRoom 0x7f0c0035
 int id image 0x7f0c003f
-int id imgDettaglioImmagine 0x7f0c006f
+int id imgDettaglioImmagine 0x7f0c006a
 int id imgListImmagine 0x7f0c0093
 int id imgVenditaImmagine 0x7f0c0091
 int id immagineActivityProfilo 0x7f0c0078
@@ -724,9 +724,9 @@ int id tabMode 0x7f0c000d
 int id text 0x7f0c00a1
 int id text2 0x7f0c009f
 int id textSpacerNoButtons 0x7f0c004d
-int id textView 0x7f0c0069
-int id textView2 0x7f0c006a
-int id textView5 0x7f0c006d
+int id textView3 0x7f0c006b
+int id textView6 0x7f0c006d
+int id textView8 0x7f0c006f
 int id time 0x7f0c009d
 int id title 0x7f0c0043
 int id title_template 0x7f0c0048
@@ -738,9 +738,9 @@ int id txtCap 0x7f0c0080
 int id txtCitta 0x7f0c007c
 int id txtCognome 0x7f0c007a
 int id txtDataNascita 0x7f0c007f
-int id txtDettaglioDescrizione 0x7f0c006e
-int id txtDettaglioNome 0x7f0c006b
-int id txtDettaglioPrezzo 0x7f0c006c
+int id txtDettaglioDescrizione 0x7f0c0070
+int id txtDettaglioNome 0x7f0c006c
+int id txtDettaglioPrezzo 0x7f0c006e
 int id txtIndirizzo 0x7f0c007b
 int id txtListId 0x7f0c0092
 int id txtListNome 0x7f0c0094

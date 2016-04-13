@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,75 +8,83 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.riccardo.hermes.dettaglio_prodotto">
+    tools:context="com.example.riccardo.hermes.dettaglio_prodotto"
+    android:orientation="vertical"
+    android:rowCount="13"
+    android:columnCount="1">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Prodotto:"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
+        android:text="Contatta il venditore"
+        android:id="@+id/btnDettaglioContattaVenditore"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="119dp" />
+        android:layout_row="12"
+        android:layout_column="0" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imgDettaglioImmagine"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Prezzo:"
-        android:id="@+id/textView2"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentEnd="true" />
+        android:text="Prodotto"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/imgDettaglioImmagine"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtDettaglioNome"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textView3"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Prezzo"
+        android:id="@+id/textView6"
+        android:layout_above="@+id/txtDettaglioNome"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtDettaglioPrezzo"
-        android:layout_alignTop="@+id/txtDettaglioNome"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Descrizione:"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/txtDettaglioPrezzo"
-        android:layout_alignParentStart="true" />
+        android:text="Descrizione"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/txtDettaglioNome"
+        android:layout_alignParentStart="true"
+        android:paddingTop="10dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtDettaglioDescrizione"
-        android:layout_below="@+id/textView5"
-        android:layout_toEndOf="@+id/txtDettaglioNome" />
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgDettaglioImmagine"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contatta il venditore"
-        android:id="@+id/btnDettaglioContattaVenditore"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="93dp"
-        android:layout_alignEnd="@+id/textView2" />
 </RelativeLayout>
 

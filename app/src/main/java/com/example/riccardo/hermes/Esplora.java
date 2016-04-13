@@ -1,100 +1,142 @@
 package com.example.riccardo.hermes;
 
-import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.util.Base64;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.Object;
-import org.json.JSONArray;
+import android.app.SearchManager;
+import android.support.v7.widget.SearchView;
+import android.widget.SearchView.OnQueryTextListener;
 import org.json.JSONException;
-import org.json.JSONObject;
-import android.widget.SimpleAdapter;
-import android.widget.SimpleAdapter.ViewBinder;
+
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by riccardo on 04/04/16.
+ * Created by riccardo on 08/04/16.
  */
-public class Esplora extends Fragment {
-    JSONArray prodotti;
-    ArrayList<HashMap<String,Object>> listaProdotti;
+public class Esplora extends Fragment implements AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener{
     ListView lista;
-    Bitmap immagineCorrente = null;
-    private static final String imageURL = "http://mechavendor.16mb.com/dettaglioProdottoImmagine.php?id=";
-    private static final String JSON_URL = "http://mechavendor.16mb.com/jsonProdotti.php";
+    GetProdotti getProdotti;
+    EditText txtCerca;
+    private CustomList customList;
     View fragmentView;
-    ImageView imgProva;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
-        //lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
-
-        listaProdotti = new ArrayList<HashMap<String,Object>>();
-        OttieniJson(JSON_URL);
-        Bitmap mIcon = null;
-//        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                                    int position, long id) {
-//                // Toast.makeText(getActivity().getApplicationContext(),(((TextView)(view.findViewById(R.id.txtListId))).getText().toString()) ,Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
-//                String idprodotto = ((TextView) (view.findViewById(R.id.txtListId))).getText().toString();
-//                intent.putExtra("id", idprodotto);
-//                startActivity(intent);
-//            }
-//
-//        });
-
+        lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
+        lista.setOnItemClickListener(this);
+        getJson();
         return  fragmentView;
     }
-    private void OttieniJson(String url) {
-        class GetJSON extends AsyncTask<String, Void, String>{
-            ProgressDialog loading;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.search_toolbar, menu);
+        MenuItem myActionMenuItem = menu.findItem( R.id.searchProdotti);
+        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                getProdotti.Filtra(newText);
+                customList = new CustomList(getActivity(),GetProdotti.idFiltrato,GetProdotti.nomeProdottoFiltrato,GetProdotti.prezzoFiltrato,GetProdotti.bitmapsFiltrato);
+                customList.notifyDataSetChanged();
+                lista.setAdapter(customList);
+                return false;
+            }
+        });
+    }
+
+    public boolean onNavigationItemSelected(MenuItem item) {
+        return true;
+    }
+    private void getDati(){
+        class GetImages extends AsyncTask<Void,Void,Void>{
+            ProgressDialog dialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                dialog = ProgressDialog.show(getActivity(),"Download Prodotti","Attendi...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(Void v) {
+                super.onPostExecute(v);
+                customList = new CustomList(getActivity(),GetProdotti.id,GetProdotti.nomeProdotto,GetProdotti.prezzo,GetProdotti.bitmaps);
+                lista.setAdapter(customList);
+                dialog.dismiss();
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    getProdotti.getDati();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }
+        GetImages getImages = new GetImages();
+        getImages.execute();
+    }
+    private void getJson() {
+        class GetURLs extends AsyncTask<String,Void,String> {
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(getActivity(), "Please Wait...",null,true,true);
+
+            }
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                getProdotti = new GetProdotti(s);
+                getDati();
             }
 
             @Override
-            protected String doInBackground(String... params) {
-
-                String uri = params[0];
-
+            protected String doInBackground(String... strings) {
                 BufferedReader bufferedReader = null;
                 try {
-                    URL url = new URL(uri);
+                    URL url = new URL(strings[0]);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();
 
@@ -110,76 +152,18 @@ public class Esplora extends Fragment {
                 }catch(Exception e){
                     return null;
                 }
-
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-                //stringJson = s;
-                //Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
-                stampaLista(s);
             }
         }
-        GetJSON gj = new GetJSON();
-        gj.execute(url);
+        GetURLs gu = new GetURLs();
+        gu.execute("http://MechaVendor.16mb.com/jsonProdotti2.php");
     }
 
-    public void stampaLista(String s){
-        try {
-            JSONObject jsonObj = new JSONObject(s);
-            prodotti = jsonObj.getJSONArray("result");
-            String immagine = "";
-            for(int i=0;i<prodotti.length();i++){
-                JSONObject c = prodotti.getJSONObject(i);
-                String id = c.getString("id");
-                String nomeProdotto = c.getString("nomeProdotto");
-                String prezzo = c.getString("prezzo")+ "€";
-                immagine = c.getString("immagine");
-                //Toast.makeText(getActivity().getApplicationContext(),c.getString("immagine"),Toast.LENGTH_SHORT).show();
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        TextView c = (TextView) view.findViewById(R.id.txtListId);
+        String idProdotto = c.getText().toString();
+        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
+        intent.putExtra("id", idProdotto);
+        startActivity(intent);
 
-                HashMap<String,Object> prod = new HashMap<String,Object>();
-                prod.put("id", id);
-                prod.put("nomeProdotto", nomeProdotto);
-                prod.put("prezzo", prezzo);
-                //prod.put("immagine", decodedByte);
-
-                //listaProdotti.add(prod);
-            }
-            Log.e("string", immagine);
-            byte []b=Base64.decode(immagine,Base64.DEFAULT);
-            ByteArrayInputStream ins =new ByteArrayInputStream(b);
-            Bitmap bm=BitmapFactory.decodeStream(ins);
-            imgProva.setImageBitmap(bm);
-
-
-
-
-
-
-
-
-
-//            ListAdapter adapter = new SimpleAdapter(
-//                    getActivity(), listaProdotti, R.layout.list_item,
-//                    new String[]{"id","nomeProdotto","prezzo","immagine"},
-//                    new int[]{R.id.txtListId, R.id.txtListNome, R.id.txtListPrezzo,R.id.imgListImmagine}
-//            );
-//            SimpleAdapter.ViewBinder viewBinder = new SimpleAdapter.ViewBinder() {
-//                public boolean setViewValue(View view, Object data, String textRepresentation) {
-//                    if (view instanceof ImageView) {
-//                        ((ImageView) view).setImageBitmap((Bitmap) data);
-//                        return true;
-//                    }
-//                    return false;
-//                }
-//            };
-//            lista.setAdapter(adapter);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
-
 }

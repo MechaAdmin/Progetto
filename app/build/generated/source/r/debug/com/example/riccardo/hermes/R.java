@@ -2309,7 +2309,7 @@ containing a value of this type.
         public static final int bottom=0x7f0c001d;
         public static final int btnAccedi=0x7f0c0072;
         public static final int btnAggiungiVendita=0x7f0c0081;
-        public static final int btnDettaglioContattaVenditore=0x7f0c0070;
+        public static final int btnDettaglioContattaVenditore=0x7f0c0069;
         public static final int btnVenditaCaricaImmagine=0x7f0c0090;
         public static final int buttonPanel=0x7f0c0044;
         public static final int cancel_action=0x7f0c0098;
@@ -2351,7 +2351,7 @@ containing a value of this type.
         public static final int icon=0x7f0c0042;
         public static final int ifRoom=0x7f0c0035;
         public static final int image=0x7f0c003f;
-        public static final int imgDettaglioImmagine=0x7f0c006f;
+        public static final int imgDettaglioImmagine=0x7f0c006a;
         public static final int imgListImmagine=0x7f0c0093;
         public static final int imgVenditaImmagine=0x7f0c0091;
         public static final int immagineActivityProfilo=0x7f0c0078;
@@ -2423,9 +2423,9 @@ containing a value of this type.
         public static final int text=0x7f0c00a1;
         public static final int text2=0x7f0c009f;
         public static final int textSpacerNoButtons=0x7f0c004d;
-        public static final int textView=0x7f0c0069;
-        public static final int textView2=0x7f0c006a;
-        public static final int textView5=0x7f0c006d;
+        public static final int textView3=0x7f0c006b;
+        public static final int textView6=0x7f0c006d;
+        public static final int textView8=0x7f0c006f;
         public static final int time=0x7f0c009d;
         public static final int title=0x7f0c0043;
         public static final int title_template=0x7f0c0048;
@@ -2437,9 +2437,9 @@ containing a value of this type.
         public static final int txtCitta=0x7f0c007c;
         public static final int txtCognome=0x7f0c007a;
         public static final int txtDataNascita=0x7f0c007f;
-        public static final int txtDettaglioDescrizione=0x7f0c006e;
-        public static final int txtDettaglioNome=0x7f0c006b;
-        public static final int txtDettaglioPrezzo=0x7f0c006c;
+        public static final int txtDettaglioDescrizione=0x7f0c0070;
+        public static final int txtDettaglioNome=0x7f0c006c;
+        public static final int txtDettaglioPrezzo=0x7f0c006e;
         public static final int txtIndirizzo=0x7f0c007b;
         public static final int txtListId=0x7f0c0092;
         public static final int txtListNome=0x7f0c0094;
