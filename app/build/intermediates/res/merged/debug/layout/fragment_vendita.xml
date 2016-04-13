@@ -68,7 +68,8 @@
             android:layout_height="match_parent"
             android:id="@+id/imgVenditaImmagine"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            />
     </RelativeLayout>
 
 
