@@ -53,13 +53,10 @@ public class Registrazione  extends AppCompatActivity {
                 final String indirizzo = txtIndirizzo.getText().toString();
                 final String citta = txtCitta.getText().toString();
                 final String cap = txtCap.getText().toString();
-
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 immagine.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                 byte[] imageBytes = baos.toByteArray();
                 String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-
-
                 registrazione(nome,cognome,username,email,password,dataNascita,indirizzo,citta,cap,encodedImage);
             }
         });
@@ -67,7 +64,7 @@ public class Registrazione  extends AppCompatActivity {
     private void registrazione(String nome, String cognome, String username, String email,String password,String dataNascita,String indirizzo,String citta, String cap,String immagine){
       class RegisterUser extends AsyncTask<String, Void, String>{
             ProgressDialog loading;
-            RegisterUserClass ruc = new RegisterUserClass();
+            RequestHandler ruc = new RequestHandler();
 
 
             @Override

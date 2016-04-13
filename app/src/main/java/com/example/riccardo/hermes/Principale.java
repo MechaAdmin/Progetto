@@ -28,6 +28,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -35,16 +36,15 @@ public class Principale extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ImageView profiloImg;
-    private final String imageURL = "http://mechavendor.16mb.com/getImage.php?username=";
+    private final String infoCliente = "http://mechavendor.16mb.com/getCliente.php?username=";
     String username;
-
+    String JSONcliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principale);
         Intent intent = getIntent();
         username = intent.getStringExtra(Login.USER_NAME);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -62,13 +62,12 @@ public class Principale extends AppCompatActivity
         nav_user.setText(username);
 
         profiloImg = (ImageView) hView.findViewById(R.id.profiloImg);
-        //getImage(username);
-        OttieniJson(imageURL + username);
+        OttieniJson(infoCliente + username);
         final Intent profiloIntent = new Intent(this, Profilo.class);
         profiloImg.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
+                profiloIntent.putExtra("json",JSONcliente);
                 startActivity(profiloIntent);
             }
         });
@@ -95,7 +94,6 @@ public class Principale extends AppCompatActivity
     }
 
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         Bundle b = new Bundle();
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
@@ -154,18 +152,20 @@ public class Principale extends AppCompatActivity
 
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                OttiniImmagine(s);
+                OttieniImmagine(s);
             }
         }
         GetJSON gj = new GetJSON();
         gj.execute(url);
     }
 
-    public void OttiniImmagine(String s) {
+    public void OttieniImmagine(String s) {
         try {
+            JSONcliente = s;
             JSONObject jsonObj = new JSONObject(s);
             JSONArray informazioni = jsonObj.getJSONArray("result");
             JSONObject c = informazioni.getJSONObject(0);
+
             new DownLoadImageTask(profiloImg).execute(c.getString("immagine"));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -194,5 +194,9 @@ public class Principale extends AppCompatActivity
         protected void onPostExecute(Bitmap result) {
             imageView.setImageBitmap(result);
         }
+    }
+    public void onRestart(){
+        super.onRestart();
+        OttieniJson(infoCliente + username);
     }
 }

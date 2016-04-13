@@ -46,7 +46,6 @@ import java.util.HashMap;
 public class Esplora extends Fragment implements AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener{
     ListView lista;
     GetProdotti getProdotti;
-    EditText txtCerca;
     private CustomList customList;
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

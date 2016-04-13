@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
                 data.put("username",params[0]);
                 data.put("password",params[1]);
 
-                RegisterUserClass ruc = new RegisterUserClass();
+                RequestHandler ruc = new RequestHandler();
 
                 String result = ruc.sendPostRequest(LOGIN_URL,data);
 

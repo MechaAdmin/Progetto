@@ -69,7 +69,7 @@ public class RequestHandler {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 response = br.readLine();
             } else {
-                response = "Error Registering";
+                response = "Ops, c'è stato un errore...riprovare";
             }
         } catch (Exception e) {
             e.printStackTrace();
