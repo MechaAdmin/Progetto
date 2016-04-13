@@ -21,33 +21,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ead9bdf1-1c1f-4592-9852-b3339b2120d2" name="Default" comment="search listview&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita$1UploadImage.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/riccardo/hermes/Esplora2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/riccardo/hermes/Esplora.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/riccardo/hermes/Vendita2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/riccardo/hermes/Vendita.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Esplora.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Esplora.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Principale$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Principale$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Principale$1GetImage.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Principale$1GetImage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Principale.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Principale.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/riccardo/hermes/Vendita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/riccardo/hermes/Principale.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/riccardo/hermes/Principale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/riccardo/hermes/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/riccardo/hermes/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dettaglio_prodotto.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dettaglio_prodotto.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/app_bar_principale.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/app_bar_principale.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_principale.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_principale.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+    <list default="true" id="ead9bdf1-1c1f-4592-9852-b3339b2120d2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hermes.iws" />
@@ -2108,7 +2082,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460484637839</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="search listview&#10;">
+      <created>1460533958975</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1460533958975</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2494,6 +2474,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2523,6 +2504,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2530,6 +2514,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="150" column="37" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
