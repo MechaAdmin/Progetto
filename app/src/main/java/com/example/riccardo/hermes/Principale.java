@@ -2,6 +2,7 @@ package com.example.riccardo.hermes;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,14 +21,23 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Principale extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ImageView profiloImg;
-    private final String imageURL = "http://mechavendor.16mb.com/getImage.php?userName=";
+    private final String imageURL = "http://mechavendor.16mb.com/getImage.php?username=";
     String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +58,13 @@ public class Principale extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         View hView = navigationView.getHeaderView(0);
-        TextView nav_user = (TextView)hView.findViewById(R.id.txtUsernameNavBar);
+        TextView nav_user = (TextView) hView.findViewById(R.id.txtUsernameNavBar);
         nav_user.setText(username);
 
         profiloImg = (ImageView) hView.findViewById(R.id.profiloImg);
-        getImage(username);
-        final Intent profiloIntent = new Intent(this,Profilo.class);
+        //getImage(username);
+        OttieniJson(imageURL + username);
+        final Intent profiloIntent = new Intent(this, Profilo.class);
         profiloImg.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -83,11 +94,6 @@ public class Principale extends AppCompatActivity
         return true;
     }
 
-
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
-
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         Bundle b = new Bundle();
@@ -97,10 +103,10 @@ public class Principale extends AppCompatActivity
             Fragment esplora = new Esplora();
             fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
         } else if (id == R.id.nav_vendi) {
-            b.putString("username",username);
+            b.putString("username", username);
             Fragment vendita = new Vendita();
             vendita.setArguments(b);
-            fragmentManager.beginTransaction().replace(R.id.container,vendita).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {
 
         } else if (id == R.id.nav_oggettiVenduti) {
@@ -112,22 +118,9 @@ public class Principale extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private void getImage(String userName) {
 
-        class GetImage extends AsyncTask<String,Void,Bitmap> {
-
-
-            ImageView bmImage;
-
-            public GetImage(ImageView bmImage) {
-                this.bmImage = bmImage;
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                super.onPostExecute(bitmap);
-                bmImage.setImageBitmap(bitmap);
-            }
+    private void OttieniJson(String url) {
+        class GetJSON extends AsyncTask<String, Void, String> {
 
             @Override
             protected void onPreExecute() {
@@ -135,21 +128,71 @@ public class Principale extends AppCompatActivity
             }
 
             @Override
-            protected Bitmap doInBackground(String... strings) {
-                String url = imageURL+ strings[0];
-                Bitmap mIcon = null;
-                try {
-                    InputStream in = new java.net.URL(url).openStream();
-                    mIcon = BitmapFactory.decodeStream(in);
-                } catch (Exception e) {
-                    Log.e("Error", e.getMessage());
+            protected String doInBackground(String... params) {
 
+                String uri = params[0];
+
+                BufferedReader bufferedReader = null;
+                try {
+                    URL url = new URL(uri);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+                        sb.append(json + "\n");
+                    }
+
+                    return sb.toString().trim();
+
+                } catch (Exception e) {
+                    return null;
                 }
-                return mIcon;
+            }
+
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                OttiniImmagine(s);
             }
         }
+        GetJSON gj = new GetJSON();
+        gj.execute(url);
+    }
 
-        GetImage gi = new GetImage(profiloImg);
-        gi.execute(userName);
+    public void OttiniImmagine(String s) {
+        try {
+            JSONObject jsonObj = new JSONObject(s);
+            JSONArray informazioni = jsonObj.getJSONArray("result");
+            JSONObject c = informazioni.getJSONObject(0);
+            new DownLoadImageTask(profiloImg).execute(c.getString("immagine"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private class DownLoadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView imageView;
+
+        public DownLoadImageTask(ImageView imageView) {
+            this.imageView = imageView;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urlOfImage = urls[0];
+            Bitmap logo = null;
+            try {
+                InputStream is = new URL(urlOfImage).openStream();
+                logo = BitmapFactory.decodeStream(is);
+            } catch (Exception e) { // Catch the download exception
+                e.printStackTrace();
+            }
+            return logo;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            imageView.setImageBitmap(result);
+        }
     }
 }
