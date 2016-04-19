@@ -47,7 +47,7 @@ import java.util.HashMap;
 /**
  * Created by riccardo on 08/04/16.
  */
-public class Esplora extends Fragment implements AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener{
+public class Esplora extends Fragment implements NavigationView.OnNavigationItemSelectedListener{
     ListAdapter adp;
     ArrayList<Prodotto> listData;
     ListView listView;
@@ -77,6 +77,27 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
                 }
             }
         });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id)
+            {
+
+                Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
+                String nome = p.getNome();
+                String prezzo = p.getPrezzo();
+                String urlImmagine = p.getUrlImmagine();
+                String descrizione = p.getDescrizione();
+                String venditore = p.getVenditore();
+                Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
+                intent.putExtra("nome", nome);
+                intent.putExtra("prezzo", prezzo);
+                intent.putExtra("urlImmagine", urlImmagine);
+                intent.putExtra("descrizione", descrizione);
+                intent.putExtra("venditore", venditore);
+                startActivity(intent);
+            }
+        });
         return  fragmentView;
     }
     @Override
@@ -98,6 +119,7 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
             }
             @Override
             public boolean onQueryTextChange(String newText) {;
+
                 return false;
             }
         });
@@ -106,16 +128,14 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
     public boolean onNavigationItemSelected(MenuItem item) {
         return true;
     }
-
-
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        TextView c = (TextView) view.findViewById(R.id.txtListId);
-        String idProdotto = c.getText().toString();
-        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
-        intent.putExtra("id", idProdotto);
-        startActivity(intent);
-
-    }
+//    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//        TextView c = (TextView) view.findViewById(R.id.txtListId);
+//        String idProdotto = c.getText().toString();
+//        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
+//        intent.putExtra("id", idProdotto);
+//        startActivity(intent);
+//
+//    }
     private void getJson(int i,int f) {
         class GetURLs extends AsyncTask<String,Void,String> {
 
@@ -136,7 +156,8 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
                         String id = stringJson.getJSONObject(i).getString("id");
                         String descrizione = stringJson.getJSONObject(i).getString("descrizione");
                         String urlImmagine = stringJson.getJSONObject(i).getString("immagine");
-                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine);
+                        String venditore = stringJson.getJSONObject(i).getString("venditore");
+                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine,venditore);
                         adp.add(p);
                     }
                     flag_loading = false;

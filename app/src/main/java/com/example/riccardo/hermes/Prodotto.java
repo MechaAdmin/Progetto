@@ -8,13 +8,14 @@ public class Prodotto {
     private String descrizione;
     private String id;
     private String urlImmagine;
-
-    public Prodotto(String nome, String prezzo, String descrizione, String id, String urlImmagine) {
+    private String venditore;
+    public Prodotto(String nome, String prezzo, String descrizione, String id, String urlImmagine,String venditore) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.descrizione = descrizione;
         this.id = id;
         this.urlImmagine = urlImmagine;
+        this.venditore = venditore;
     }
 
     public String getNome() {
@@ -37,6 +38,13 @@ public class Prodotto {
         return urlImmagine;
     }
 
+    public String getVenditore() {
+        return venditore;
+    }
+
+    public void setVenditore(String venditore) {
+        this.venditore = venditore;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
