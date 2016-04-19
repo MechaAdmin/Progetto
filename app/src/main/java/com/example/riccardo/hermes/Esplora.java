@@ -61,7 +61,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         adp = new ListAdapter(getActivity(),listData,getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
         listView.setAdapter(adp);
-        getJson(inizio,fine);
+        getJson(inizio,fine,"");
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
             }
@@ -72,7 +72,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                     if(flag_loading == false)
                     {
                         flag_loading = true;
-                        getJson(inizio,fine);
+                        getJson(inizio,fine,"");
                     }
                 }
             }
@@ -115,11 +115,14 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                return false;
+                listData.clear();
+                getJson(inizio,fine,query);
+
+                return true;
             }
             @Override
-            public boolean onQueryTextChange(String newText) {;
-
+            public boolean onQueryTextChange(String newText) {
+              //  getJson(inizio,fine,newText);
                 return false;
             }
         });
@@ -136,7 +139,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
 //        startActivity(intent);
 //
 //    }
-    private void getJson(int i,int f) {
+    private void getJson(int i,int f,String condizione) {
         class GetURLs extends AsyncTask<String,Void,String> {
 
             @Override
@@ -191,7 +194,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             }
         }
         GetURLs gu = new GetURLs();
-        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?inizio="+i+"&fine="+f);
+        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?condizione="+condizione +"&inizio="+i+"&fine="+f);
         inizio = f;
         fine = f +3;
     }
