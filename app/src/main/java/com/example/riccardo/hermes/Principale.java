@@ -155,7 +155,9 @@ public class Principale extends AppCompatActivity
 
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
+                JSONcliente=s;
                 try {
+
                     JSONObject jsonObj = new JSONObject(s);
                     JSONArray informazioni = jsonObj.getJSONArray("result");
                     JSONObject c = informazioni.getJSONObject(0);

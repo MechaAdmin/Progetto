@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/ic_launcher.png",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\home\\riccardo\\Scrivania\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
 ]
