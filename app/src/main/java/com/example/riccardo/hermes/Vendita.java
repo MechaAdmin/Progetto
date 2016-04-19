@@ -47,10 +47,10 @@ public class Vendita extends Fragment {
     private Button btnCaricaImmagine;
     private ImageView immagine;
     private Bitmap bitmap;
-    private String username;
+    private String mail;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView =  inflater.inflate(R.layout.fragment_vendita,null);
-        username = this.getArguments().getString("username");
+        mail = this.getArguments().getString("mail");
         txtNome = (TextView)fragmentView.findViewById(R.id.txtVenditaNome);
         txtPrezzo = (TextView)fragmentView.findViewById(R.id.txtVenditaPrezzo);
         txtDescrizione = (TextView)fragmentView.findViewById(R.id.txtVenditaDescrizione);
@@ -85,8 +85,6 @@ public class Vendita extends Fragment {
             filePath = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
-
-
                 immagine.setImageBitmap(resizeImage(bitmap));
             } catch (IOException e) {
                 Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -130,7 +128,7 @@ public class Vendita extends Fragment {
             data.put("nomeProdotto",nomeProdotto);
             data.put("prezzo",prezzo);
             data.put("descrizione",descrizione);
-            data.put("venditore",username);
+            data.put("venditore",mail);
             String result = rh.sendPostRequest("http://mechavendor.16mb.com/uploadProdotti.php",data);
 
             return result;

@@ -86,10 +86,10 @@ public class GetProdotti {
         idFiltrato = new String[tmpPrezzo.size()];
         bitmapsFiltrato = new Bitmap[tmpPrezzo.size()];
         for(int i = 0;i<tmpPrezzo.size();i++){
-                nomeProdottoFiltrato[i] = tmpNome.get(i);
-                prezzoFiltrato[i] = tmpPrezzo.get(i);
-                idFiltrato[i] = tmpId.get(i);
-                bitmapsFiltrato[i] = tmpBitmaps.get(i);
+            nomeProdottoFiltrato[i] = tmpNome.get(i);
+            prezzoFiltrato[i] = tmpPrezzo.get(i);
+            idFiltrato[i] = tmpId.get(i);
+            bitmapsFiltrato[i] = tmpBitmaps.get(i);
         }
     }
 

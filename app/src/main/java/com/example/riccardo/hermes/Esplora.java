@@ -22,6 +22,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,7 +32,10 @@ import android.widget.Toast;
 import android.app.SearchManager;
 import android.support.v7.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
+
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -44,15 +48,35 @@ import java.util.HashMap;
  * Created by riccardo on 08/04/16.
  */
 public class Esplora extends Fragment implements AdapterView.OnItemClickListener,NavigationView.OnNavigationItemSelectedListener{
-    ListView lista;
-    GetProdotti getProdotti;
-    private CustomList customList;
+    ListAdapter adp;
+    ArrayList<Prodotto> listData;
+    ListView listView;
+    int inizio = 0;
+    int fine = 3;
+    Boolean flag_loading = false;
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fragmentView = inflater.inflate(R.layout.fragment_esplora,null);
-        lista = (ListView) fragmentView.findViewById(R.id.listProdotti);
-        lista.setOnItemClickListener(this);
-        getJson();
+        fragmentView =  inflater.inflate(R.layout.fragment_esplora,null);
+        listData = new ArrayList<Prodotto>();
+        adp = new ListAdapter(getActivity(),listData,getActivity());
+        listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
+        listView.setAdapter(adp);
+        getJson(inizio,fine);
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+            }
+
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if(firstVisibleItem+visibleItemCount == totalItemCount && totalItemCount!=0)
+                {
+                    if(flag_loading == false)
+                    {
+                        flag_loading = true;
+                        getJson(inizio,fine);
+                    }
+                }
+            }
+        });
         return  fragmentView;
     }
     @Override
@@ -73,11 +97,7 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
                 return false;
             }
             @Override
-            public boolean onQueryTextChange(String newText) {
-                getProdotti.Filtra(newText);
-                customList = new CustomList(getActivity(),GetProdotti.idFiltrato,GetProdotti.nomeProdottoFiltrato,GetProdotti.prezzoFiltrato,GetProdotti.bitmapsFiltrato);
-                customList.notifyDataSetChanged();
-                lista.setAdapter(customList);
+            public boolean onQueryTextChange(String newText) {;
                 return false;
             }
         });
@@ -86,37 +106,17 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
     public boolean onNavigationItemSelected(MenuItem item) {
         return true;
     }
-    private void getDati(){
-        class GetImages extends AsyncTask<Void,Void,Void>{
-            ProgressDialog dialog;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                dialog = ProgressDialog.show(getActivity(),"Download Prodotti","Attendi...",false,false);
-            }
 
-            @Override
-            protected void onPostExecute(Void v) {
-                super.onPostExecute(v);
-                customList = new CustomList(getActivity(),GetProdotti.id,GetProdotti.nomeProdotto,GetProdotti.prezzo,GetProdotti.bitmaps);
-                lista.setAdapter(customList);
-                dialog.dismiss();
-            }
 
-            @Override
-            protected Void doInBackground(Void... voids) {
-                try {
-                    getProdotti.getDati();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-        }
-        GetImages getImages = new GetImages();
-        getImages.execute();
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        TextView c = (TextView) view.findViewById(R.id.txtListId);
+        String idProdotto = c.getText().toString();
+        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
+        intent.putExtra("id", idProdotto);
+        startActivity(intent);
+
     }
-    private void getJson() {
+    private void getJson(int i,int f) {
         class GetURLs extends AsyncTask<String,Void,String> {
 
             @Override
@@ -127,8 +127,23 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                getProdotti = new GetProdotti(s);
-                getDati();
+                try{
+                    JSONObject jsonObject = new JSONObject(s);
+                    JSONArray stringJson = jsonObject.getJSONArray("result");
+                    for(int i=0;i< stringJson.length();i++){
+                        String prezzo = stringJson.getJSONObject(i).getString("prezzo") + "€";
+                        String nome = stringJson.getJSONObject(i).getString("nomeProdotto");
+                        String id = stringJson.getJSONObject(i).getString("id");
+                        String descrizione = stringJson.getJSONObject(i).getString("descrizione");
+                        String urlImmagine = stringJson.getJSONObject(i).getString("immagine");
+                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine);
+                        adp.add(p);
+                    }
+                    flag_loading = false;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
             }
 
             @Override
@@ -138,6 +153,7 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
                     URL url = new URL(strings[0]);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();
+
 
                     bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -154,15 +170,8 @@ public class Esplora extends Fragment implements AdapterView.OnItemClickListener
             }
         }
         GetURLs gu = new GetURLs();
-        gu.execute("http://MechaVendor.16mb.com/jsonProdotti2.php");
-    }
-
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        TextView c = (TextView) view.findViewById(R.id.txtListId);
-        String idProdotto = c.getText().toString();
-        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
-        intent.putExtra("id", idProdotto);
-        startActivity(intent);
-
+        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?inizio="+i+"&fine="+f);
+        inizio = f;
+        fine = f +3;
     }
 }

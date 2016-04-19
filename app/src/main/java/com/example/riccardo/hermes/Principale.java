@@ -21,6 +21,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +41,7 @@ public class Principale extends AppCompatActivity
     private final String infoCliente = "http://mechavendor.16mb.com/getCliente.php?username=";
     String username;
     String JSONcliente;
+    String mailCliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +104,7 @@ public class Principale extends AppCompatActivity
             Fragment esplora = new Esplora();
             fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
         } else if (id == R.id.nav_vendi) {
-            b.putString("username", username);
+            b.putString("mail", mailCliente);
             Fragment vendita = new Vendita();
             vendita.setArguments(b);
             fragmentManager.beginTransaction().replace(R.id.container, vendita).commit();
@@ -152,49 +155,21 @@ public class Principale extends AppCompatActivity
 
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                OttieniImmagine(s);
+                try {
+                    JSONObject jsonObj = new JSONObject(s);
+                    JSONArray informazioni = jsonObj.getJSONArray("result");
+                    JSONObject c = informazioni.getJSONObject(0);
+                    mailCliente = c.getString("mail");
+                    Picasso.with(Principale.this).load(c.getString("immagine")).into(profiloImg);
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
             }
         }
         GetJSON gj = new GetJSON();
         gj.execute(url);
     }
 
-    public void OttieniImmagine(String s) {
-        try {
-            JSONcliente = s;
-            JSONObject jsonObj = new JSONObject(s);
-            JSONArray informazioni = jsonObj.getJSONArray("result");
-            JSONObject c = informazioni.getJSONObject(0);
-
-            new DownLoadImageTask(profiloImg).execute(c.getString("immagine"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private class DownLoadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView imageView;
-
-        public DownLoadImageTask(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urlOfImage = urls[0];
-            Bitmap logo = null;
-            try {
-                InputStream is = new URL(urlOfImage).openStream();
-                logo = BitmapFactory.decodeStream(is);
-            } catch (Exception e) { // Catch the download exception
-                e.printStackTrace();
-            }
-            return logo;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            imageView.setImageBitmap(result);
-        }
-    }
     public void onRestart(){
         super.onRestart();
         OttieniJson(infoCliente + username);
