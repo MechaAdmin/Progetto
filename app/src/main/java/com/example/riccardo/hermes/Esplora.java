@@ -53,6 +53,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     ListView listView;
     int inizio = 0;
     int fine = 3;
+    String ricerca = "";
     Boolean flag_loading = false;
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -72,7 +73,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                     if(flag_loading == false)
                     {
                         flag_loading = true;
-                        getJson(inizio,fine,"");
+                        getJson(inizio,fine,ricerca);
                     }
                 }
             }
@@ -115,15 +116,17 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                listData.clear();
-                getJson(inizio,fine,query);
-
-                return true;
+                return false;
             }
             @Override
             public boolean onQueryTextChange(String newText) {
-              //  getJson(inizio,fine,newText);
-                return false;
+                adp.clear();
+                inizio = 0;
+                fine = 3;
+                getJson(inizio, fine, newText);
+                ricerca = newText;
+
+                return true;
             }
         });
     }
@@ -153,7 +156,8 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                 try{
                     JSONObject jsonObject = new JSONObject(s);
                     JSONArray stringJson = jsonObject.getJSONArray("result");
-                    for(int i=0;i< stringJson.length();i++){
+
+                    for(int i=0;i<3;i++){
                         String prezzo = stringJson.getJSONObject(i).getString("prezzo") + "€";
                         String nome = stringJson.getJSONObject(i).getString("nomeProdotto");
                         String id = stringJson.getJSONObject(i).getString("id");
@@ -163,6 +167,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                         Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine,venditore);
                         adp.add(p);
                     }
+
                     flag_loading = false;
                 }catch (Exception e){
                     e.printStackTrace();
