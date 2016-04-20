@@ -32,7 +32,6 @@ import java.net.URL;
 import java.util.HashMap;
 
 public class dettaglio_prodotto extends AppCompatActivity {
-    private static final String JSON_URL = "http://mechavendor.16mb.com/dettaglioProdotto.php?id=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +45,14 @@ public class dettaglio_prodotto extends AppCompatActivity {
         nomeProdotto.setText(intent.getStringExtra("nome"));
         prezzo.setText(intent.getStringExtra("prezzo"));
         descrizione.setText(intent.getStringExtra("descrizione"));
+        final String mail = intent.getStringExtra("venditore");
         Picasso.with(dettaglio_prodotto.this).load(intent.getStringExtra("urlImmagine")).into(imgProdotto);
         contattaVenditore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, "ciao@gmail.com");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mail});
                 startActivity(intent);
             }
         });

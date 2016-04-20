@@ -5,16 +5,11 @@ import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.design.widget.NavigationView;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
 import java.util.HashMap;
 
 /**
@@ -51,10 +41,10 @@ public class Vendita extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView =  inflater.inflate(R.layout.fragment_vendita,null);
         mail = this.getArguments().getString("mail");
-        txtNome = (TextView)fragmentView.findViewById(R.id.txtVenditaNome);
+        txtNome = (TextView)fragmentView.findViewById(R.id.txtModificaNome);
         txtPrezzo = (TextView)fragmentView.findViewById(R.id.txtVenditaPrezzo);
         txtDescrizione = (TextView)fragmentView.findViewById(R.id.txtVenditaDescrizione);
-        btnInsVendita = (Button)fragmentView.findViewById(R.id.btnAggiungiVendita);
+        btnInsVendita = (Button)fragmentView.findViewById(R.id.btnConfermaModifica);
         btnCaricaImmagine = (Button)fragmentView.findViewById(R.id.btnVenditaCaricaImmagine);
         immagine = (ImageView)fragmentView.findViewById(R.id.imgVenditaImmagine);
         btnCaricaImmagine.setOnClickListener(new View.OnClickListener() {

@@ -2,10 +2,7 @@ package com.example.riccardo.hermes;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -28,9 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -138,14 +134,11 @@ public class Principale extends AppCompatActivity
                     URL url = new URL(uri);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();
-
                     bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
                     String json;
                     while ((json = bufferedReader.readLine()) != null) {
                         sb.append(json + "\n");
                     }
-
                     return sb.toString().trim();
 
                 } catch (Exception e) {
@@ -162,7 +155,9 @@ public class Principale extends AppCompatActivity
                     JSONArray informazioni = jsonObj.getJSONArray("result");
                     JSONObject c = informazioni.getJSONObject(0);
                     mailCliente = c.getString("mail");
-                    Picasso.with(Principale.this).load(c.getString("immagine")).into(profiloImg);
+                    Log.d("immagine", c.getString("immagine"));
+                    profiloImg.setImageDrawable(null);
+                    Picasso.with(Principale.this).load(c.getString("immagine")).memoryPolicy(MemoryPolicy.NO_CACHE).into(profiloImg);
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
@@ -172,8 +167,8 @@ public class Principale extends AppCompatActivity
         gj.execute(url);
     }
 
-    public void onRestart(){
-        super.onRestart();
-        OttieniJson(infoCliente + username);
-    }
+   public void onRestart() {
+       super.onRestart();
+       OttieniJson(infoCliente + username);
+   }
 }

@@ -30,15 +30,15 @@ public class Registrazione  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrazione);
-        final Button btnRegistrazione = (Button)findViewById(R.id.btnAggiungiVendita);
-        txtNome = (TextView)findViewById(R.id.txtVenditaNome);
+        final Button btnRegistrazione = (Button)findViewById(R.id.btnRegistrazione);
+        txtNome = (TextView)findViewById(R.id.txtNome);
         txtCognome = (TextView)findViewById(R.id.txtCognome);
         txtUsername = (TextView)findViewById(R.id.txtUserName);
         txtDataNascita = (TextView)findViewById(R.id.txtDataNascita);
         txtCitta = (TextView)findViewById(R.id.txtCitta);
         txtCap = (TextView)findViewById(R.id.txtCap);
         txtIndirizzo = (TextView)findViewById(R.id.txtIndirizzo);
-        txtMail = (TextView)findViewById(R.id.txtUsernameNavBar);
+        txtMail = (TextView)findViewById(R.id.txtMail);
         txtPassword = (TextView)findViewById(R.id.txtPassword);
         immagine = BitmapFactory.decodeResource(getResources(),R.drawable.userdefault);
         btnRegistrazione.setOnClickListener(new View.OnClickListener() {

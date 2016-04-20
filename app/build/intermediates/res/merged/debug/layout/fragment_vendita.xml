@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/txtVenditaNome"
+        android:id="@+id/txtModificaNome"
         android:hint="Nome Prodotto"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Metti in vendita"
-        android:id="@+id/btnAggiungiVendita"
+        android:id="@+id/btnConfermaModifica"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/txtVenditaDescrizione"
         android:layout_alignParentStart="true" />
@@ -34,9 +34,9 @@
         android:id="@+id/txtVenditaDescrizione"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtVenditaNome"
+        android:layout_below="@+id/txtModificaNome"
         android:hint="Descrizione Prodotto"
-        android:layout_above="@+id/btnAggiungiVendita" />
+        android:layout_above="@+id/btnConfermaModifica" />
 
     <EditText
         android:layout_width="100dp"
@@ -45,7 +45,7 @@
         android:ems="10"
         android:id="@+id/txtVenditaPrezzo"
         android:hint="Prezzo"
-        android:layout_alignTop="@+id/txtVenditaNome"
+        android:layout_alignTop="@+id/txtModificaNome"
         android:layout_alignParentEnd="true" />
 
     <Button
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:text="Carica Immagine"
         android:id="@+id/btnVenditaCaricaImmagine"
-        android:layout_above="@+id/txtVenditaNome"
+        android:layout_above="@+id/txtModificaNome"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/txtVenditaPrezzo" />
 

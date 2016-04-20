@@ -42,11 +42,11 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
     ListAdapter adp;
     ArrayList<Prodotto> listInVendita;
     ArrayList<Prodotto> listVenduti;
-    int inizio = 0;
-    int fine = 3;
+    int inizioRigaQuery = 0;
+    int numRigheQuery = 3;
     Boolean flag_loading = false;
-    View fragmentView;
     String mail;
+    String jsonCliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +60,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         listViewInVendita.setAdapter(adp);
 
         Intent intent = getIntent();
-        String jsonCliente = intent.getStringExtra("json");
+        jsonCliente = intent.getStringExtra("json");
         try{
             JSONObject jsonObj = new JSONObject(jsonCliente);
             JSONArray informazioni = jsonObj.getJSONArray("result");
@@ -82,12 +82,25 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         spec.setContent(R.id.tabOggettiVenduti);
         spec.setIndicator("Prodotti Venduti");
         host.addTab(spec);
-        getJson(inizio,fine);
+        getJson(inizioRigaQuery,numRigheQuery);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_modifica_profilo, menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menuModifica:
+                Intent intent = new Intent(Profilo.this,ModificaCliente.class);
+                intent.putExtra("json",jsonCliente);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
     public boolean onNavigationItemSelected(MenuItem item) {
         return true;
@@ -149,8 +162,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         }
         GetURLs gu = new GetURLs();
         gu.execute("http://MechaVendor.16mb.com/jsonProdottiInVendita.php?mail="+mail);
-        inizio = f;
-        fine = f +3;
+        inizioRigaQuery = inizioRigaQuery+numRigheQuery ;
     }
 
 }

@@ -25,8 +25,8 @@ public class Login extends AppCompatActivity {
         final Intent intentRegistrazione = new Intent(this,Registrazione.class);
         final Intent intentPrincipale = new Intent(this,Principale.class);
         final TextView txtRegistrati = (TextView)findViewById(R.id.txtRegistrati);
-        txtUsername = (TextView)findViewById(R.id.txtUsernameNavBar);
-        txtPassword = (TextView)findViewById(R.id.txtPassword);
+        txtUsername = (TextView)findViewById(R.id.txtModificaMail);
+        txtPassword = (TextView)findViewById(R.id.txtModificaPassword);
         txtRegistrati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

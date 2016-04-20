@@ -44,6 +44,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.net.ssl.HttpsURLConnection;
+
 /**
  * Created by riccardo on 08/04/16.
  */
@@ -51,8 +53,8 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     ListAdapter adp;
     ArrayList<Prodotto> listData;
     ListView listView;
-    int inizio = 0;
-    int fine = 3;
+    int inizioRigaQuery = 0;
+    int numRigheQuery = 3;
     String ricerca = "";
     Boolean flag_loading = false;
     View fragmentView;
@@ -62,7 +64,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         adp = new ListAdapter(getActivity(),listData,getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
         listView.setAdapter(adp);
-        getJson(inizio,fine,"");
+        getJson(inizioRigaQuery,numRigheQuery,"");
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
             }
@@ -73,7 +75,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                     if(flag_loading == false)
                     {
                         flag_loading = true;
-                        getJson(inizio,fine,ricerca);
+                        getJson(inizioRigaQuery,numRigheQuery,ricerca);
                     }
                 }
             }
@@ -121,9 +123,8 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             @Override
             public boolean onQueryTextChange(String newText) {
                 adp.clear();
-                inizio = 0;
-                fine = 3;
-                getJson(inizio, fine, newText);
+                inizioRigaQuery = 0;
+                getJson(inizioRigaQuery, numRigheQuery, newText);
                 ricerca = newText;
 
                 return true;
@@ -134,14 +135,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     public boolean onNavigationItemSelected(MenuItem item) {
         return true;
     }
-//    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//        TextView c = (TextView) view.findViewById(R.id.txtListId);
-//        String idProdotto = c.getText().toString();
-//        Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
-//        intent.putExtra("id", idProdotto);
-//        startActivity(intent);
-//
-//    }
     private void getJson(int i,int f,String condizione) {
         class GetURLs extends AsyncTask<String,Void,String> {
 
@@ -156,8 +149,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                 try{
                     JSONObject jsonObject = new JSONObject(s);
                     JSONArray stringJson = jsonObject.getJSONArray("result");
-
-                    for(int i=0;i<3;i++){
+                    for(int i=0;i<stringJson.length();i++){
                         String prezzo = stringJson.getJSONObject(i).getString("prezzo") + "€";
                         String nome = stringJson.getJSONObject(i).getString("nomeProdotto");
                         String id = stringJson.getJSONObject(i).getString("id");
@@ -172,9 +164,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-
             }
-
             @Override
             protected String doInBackground(String... strings) {
                 BufferedReader bufferedReader = null;
@@ -200,7 +190,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         }
         GetURLs gu = new GetURLs();
         gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?condizione="+condizione +"&inizio="+i+"&fine="+f);
-        inizio = f;
-        fine = f +3;
+        inizioRigaQuery = inizioRigaQuery + numRigheQuery;
     }
 }
