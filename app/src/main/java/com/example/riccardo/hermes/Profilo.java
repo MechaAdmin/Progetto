@@ -23,6 +23,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -68,7 +69,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
             txtNome.setText(c.getString("nome") + " " + c.getString("cognome"));
             txtMail.setText(c.getString("mail"));
             mail = c.getString("mail");
-            Picasso.with(Profilo.this).load(c.getString("immagine")).into(imgProfilo);
+            Picasso.with(Profilo.this).load(c.getString("immagine")).memoryPolicy(MemoryPolicy.NO_CACHE).into(imgProfilo);
         }catch (JSONException e){
             e.printStackTrace();
         }

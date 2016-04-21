@@ -52,12 +52,12 @@
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",

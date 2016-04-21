@@ -3,6 +3,7 @@ package com.example.riccardo.hermes;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -155,9 +157,9 @@ public class Principale extends AppCompatActivity
                     JSONArray informazioni = jsonObj.getJSONArray("result");
                     JSONObject c = informazioni.getJSONObject(0);
                     mailCliente = c.getString("mail");
-                    Log.d("immagine", c.getString("immagine"));
-                    profiloImg.setImageDrawable(null);
-                    Picasso.with(Principale.this).load(c.getString("immagine")).memoryPolicy(MemoryPolicy.NO_CACHE).into(profiloImg);
+                    //Log.d("immagine", c.getString("immagine"));
+                    Picasso.with(Principale.this).invalidate(c.getString("immagine"));
+                    Picasso.with(Principale.this).load(c.getString("immagine")).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE).into(profiloImg);
                 }catch (JSONException e){
                     e.printStackTrace();
                 }

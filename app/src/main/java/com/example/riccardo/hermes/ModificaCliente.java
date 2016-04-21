@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
@@ -17,7 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -93,6 +96,7 @@ public class ModificaCliente extends AppCompatActivity {
             txtMail.setText(vecchiaMail);
             txtPassword.setText(password);
             txtPaese.setText(paese);
+            //Picasso.with(ModificaCliente.this).load(urlImmagine).memoryPolicy(MemoryPolicy.NO_CACHE).into(immagine);
             Picasso.with(ModificaCliente.this).load(urlImmagine).into(immagine);
             BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
             imgProfilo = drawable.getBitmap();
@@ -134,6 +138,7 @@ public class ModificaCliente extends AppCompatActivity {
             try {
                 imgProfilo = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 immagine.setImageBitmap(resizeImage(imgProfilo));
+                imgProfilo = resizeImage(imgProfilo);
             } catch (IOException e) {
                 Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
             }
