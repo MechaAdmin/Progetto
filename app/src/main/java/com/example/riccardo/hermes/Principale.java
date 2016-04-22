@@ -107,7 +107,8 @@ public class Principale extends AppCompatActivity
             vendita.setArguments(b);
             fragmentManager.beginTransaction().replace(R.id.container, vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {
-
+            Fragment preferiti = new Preferiti();
+            fragmentManager.beginTransaction().replace(R.id.container, preferiti).commit();
         } else if (id == R.id.nav_oggettiVenduti) {
 
         } else if (id == R.id.nav_impostazioni) {

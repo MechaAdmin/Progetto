@@ -1,2 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.2.1_ee419b9af43b561a82edeed2ba4fcb57bde477f2/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_da20d45c6f3c9e3c2af99b38790ab20891ec3f67/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.1_21ab1c1711c31de949322c1a3c990e7f4586500a/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_1625989465f60db096f5ad8a58ac83139d9ceb8d/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.1_ca2718dd133b3f8d1ccc677fc9130b5c1a63eec8/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_40b91caa75fa95ab631e666ae0987c53f9ef0676/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.2.1_3aa8fe11a5f5fe8bba17d064210ececda989b5f9/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.1_771ae9452597c752e378fa64befa4829ddb67d74/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a87f9d11cec59f4aec78c4ecde9a268d3c3be289">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4fc9372fb91f5d0b57cfb672b6fe5fa92422079f/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.2.1_e7a30baf51ce4352c64871562a800dbd3a6de0f0/classes.dex" />
+    </item>
+    <item
+        jar="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="dd1861576eec751d66c1f5a8e832bf3a888988c2">
+        <dex dex="/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_752cd78b2478ce4f82ab01fb71937dadebf4e45e/classes.dex" />
+    </item>
+
+</items>

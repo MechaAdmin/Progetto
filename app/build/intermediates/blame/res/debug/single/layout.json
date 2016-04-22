@@ -160,6 +160,10 @@
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_action_menu_item_layout.xml"
     },
     {
+        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/fragment_preferiti.xml",
+        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/layout/fragment_preferiti.xml"
+    },
+    {
         "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },

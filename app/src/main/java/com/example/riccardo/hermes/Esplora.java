@@ -39,6 +39,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -87,6 +88,12 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             {
 
                 Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
+                dbPreferiti db = new dbPreferiti(getActivity());
+                db.addProdotto(p);
+                ArrayList<Prodotto> list = db.getAllProdotto();
+                for(int i = 0;i< list.size();i++){
+                    Log.d("list",list.get(i).getNome());
+                }
                 String nome = p.getNome();
                 String prezzo = p.getPrezzo();
                 String urlImmagine = p.getUrlImmagine();
@@ -126,7 +133,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                 inizioRigaQuery = 0;
                 getJson(inizioRigaQuery, numRigheQuery, newText);
                 ricerca = newText;
-
                 return true;
             }
         });
