@@ -53,7 +53,8 @@ public class dbPreferiti extends SQLiteOpenHelper {
                         null); // h. limit
         if (cursor != null)
             cursor.moveToFirst();
-        if(cursor.getString(0) != null){
+
+        if(cursor.getCount() > 0){
             Toast.makeText(c,"Prodotto già aggiunto ai Preferiti",Toast.LENGTH_SHORT).show();
             return;
         }
@@ -68,10 +69,11 @@ public class dbPreferiti extends SQLiteOpenHelper {
         values.put("urlImmagine",p.getUrlImmagine());
         values.put("venditore",p.getVenditore());
         db.insert("Preferiti", null, values);
+        Toast.makeText(c,"Prodotto aggiunto ai Preferiti",Toast.LENGTH_SHORT).show();
         db.close();
 
     }
-    public Prodotto getBook(String id){
+    public Prodotto getProdotto(String id){
 
         // 1. get reference to readable DB
         SQLiteDatabase db = this.getReadableDatabase();
@@ -91,7 +93,6 @@ public class dbPreferiti extends SQLiteOpenHelper {
         Prodotto p = new Prodotto(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(0),cursor.getString(4),cursor.getString(5));
         return p;
     }
-    // Get All Books
     public ArrayList<Prodotto> getAllProdotto() {
         ArrayList<Prodotto> prodottiPreferiti = new ArrayList<Prodotto>();
         String query = "SELECT  * FROM Preferiti";
@@ -101,15 +102,13 @@ public class dbPreferiti extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 p = new Prodotto(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(0),cursor.getString(4),cursor.getString(5));
-
-                // Add book to books
                 prodottiPreferiti.add(p);
             } while (cursor.moveToNext());
         }
 
         return prodottiPreferiti;
     }
-    public void deleteBook(Prodotto p) {
+    public void deleteProdotto(Prodotto p) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("Preferiti", "id"+" = ?", new String[] { String.valueOf(p.getId()) });
         db.close();

@@ -66,6 +66,16 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
         listView.setAdapter(adp);
         getJson(inizioRigaQuery,numRigheQuery,"");
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
+                Prodotto p  =(Prodotto)arg0.getAdapter().getItem(pos);
+                dbPreferiti db = new dbPreferiti(getActivity());
+                db.addProdotto(p);
+                return true;
+            }
+        });
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
             }
@@ -88,12 +98,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             {
 
                 Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
-                dbPreferiti db = new dbPreferiti(getActivity());
-                db.addProdotto(p);
-                ArrayList<Prodotto> list = db.getAllProdotto();
-                for(int i = 0;i< list.size();i++){
-                    Log.d("list",list.get(i).getNome());
-                }
                 String nome = p.getNome();
                 String prezzo = p.getPrezzo();
                 String urlImmagine = p.getUrlImmagine();
