@@ -7,6 +7,10 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Esplora" />
         <item
+            android:id="@+id/nav_preferiti"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Preferiti" />
+        <item
             android:id="@+id/nav_vendi"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Vendi" />

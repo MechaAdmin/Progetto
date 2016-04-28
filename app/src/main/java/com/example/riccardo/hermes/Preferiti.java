@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,16 +36,14 @@ public class Preferiti extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView =  inflater.inflate(R.layout.fragment_preferiti,null);
         db = new dbPreferiti(getActivity());
-        //ArrayList<Prodotto> list = db.getAllProdotto();
-        //ListAdapter adp = new ListAdapter(getActivity(),list,getActivity());
         listview = (ListView) fragmentView.findViewById(R.id.listPreferiti);
-        //listview.setAdapter(adp);
+        getJson();
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 Prodotto p  =(Prodotto)arg0.getAdapter().getItem(pos);
-                db.deleteProdotto(p);
+                db.deleteProdotto(p.getId());
                 ArrayList<Prodotto> list = db.getAllProdotto();
                 ListAdapter adp = new ListAdapter(getActivity(),list,getActivity());
                 listview.setAdapter(adp);
@@ -53,7 +52,7 @@ public class Preferiti extends Fragment {
         });
         return  fragmentView;
     }
-    private void getJson(int i,int f,String condizione) {
+    private void getJson() {
         class GetURLs extends AsyncTask<String,Void,String> {
 
             @Override
@@ -65,6 +64,7 @@ public class Preferiti extends Fragment {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 try{
+                    Boolean eliminato = false;
                     JSONObject jsonObject = new JSONObject(s);
                     JSONArray stringJson = jsonObject.getJSONArray("result");
                     HashSet<String> hs = new HashSet<String>();
@@ -72,6 +72,18 @@ public class Preferiti extends Fragment {
                     for(int i=0;i<stringJson.length();i++){
                         String id = stringJson.getJSONObject(i).getString("id");
                         hs.add(id);
+                    }
+                    for(int i =0;i<list.size();i++){
+                        if(!hs.contains(list.get(i).getId())){
+                            eliminato = true;
+                            db.deleteProdotto(list.get(i).getId());
+                        }
+                    }
+                    list = db.getAllProdotto();
+                    ListAdapter adp = new ListAdapter(getActivity(),list,getActivity());
+                    listview.setAdapter(adp);
+                    if(eliminato){
+                        Toast.makeText(getActivity(),"Alcuni prodotti tra i tuoi preferiti non sono piu presenti nel catalogo",Toast.LENGTH_LONG).show();
                     }
 
                 }catch (Exception e){
@@ -100,7 +112,6 @@ public class Preferiti extends Fragment {
             }
         }
         GetURLs gu = new GetURLs();
-        Integer x = Integer.MAX_VALUE;
-        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?condizione=&inizio=0?&fine="+x);
+        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?inizio=0&fine=80000000");
     }
 }

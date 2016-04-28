@@ -107,12 +107,14 @@ public class Principale extends AppCompatActivity
             vendita.setArguments(b);
             fragmentManager.beginTransaction().replace(R.id.container, vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {
-            Fragment preferiti = new Preferiti();
-            fragmentManager.beginTransaction().replace(R.id.container, preferiti).commit();
+
         } else if (id == R.id.nav_oggettiVenduti) {
 
         } else if (id == R.id.nav_impostazioni) {
 
+        }else if (id == R.id.nav_preferiti) {
+            Fragment preferiti = new Preferiti();
+            fragmentManager.beginTransaction().replace(R.id.container, preferiti).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -158,7 +160,6 @@ public class Principale extends AppCompatActivity
                     JSONArray informazioni = jsonObj.getJSONArray("result");
                     JSONObject c = informazioni.getJSONObject(0);
                     mailCliente = c.getString("mail");
-                    //Log.d("immagine", c.getString("immagine"));
                     Picasso.with(Principale.this).invalidate(c.getString("immagine"));
                     Picasso.with(Principale.this).load(c.getString("immagine")).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE).into(profiloImg);
                 }catch (JSONException e){

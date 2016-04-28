@@ -24,7 +24,7 @@ public class dbPreferiti extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_BOOK_TABLE = "CREATE TABLE Preferiti ( " +
-                "id INTEGER PRIMARY KEY , " +
+                "id TEXT PRIMARY KEY , " +
                 "nome TEXT, " +
                 "prezzo TEXT, " +
                 "descrizione TEXT, " +
@@ -108,9 +108,9 @@ public class dbPreferiti extends SQLiteOpenHelper {
 
         return prodottiPreferiti;
     }
-    public void deleteProdotto(Prodotto p) {
+    public void deleteProdotto(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete("Preferiti", "id"+" = ?", new String[] { String.valueOf(p.getId()) });
+        db.delete("Preferiti", "id"+" = ?", new String[] { String.valueOf(id) });
         db.close();
 
     }
