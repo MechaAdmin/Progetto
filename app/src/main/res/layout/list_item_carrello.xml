@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtListId"
+        android:id="@+id/txtListIdCarrello"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:visibility="gone"
@@ -22,9 +22,9 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/imgListImmagine"
+        android:id="@+id/imgListImmagineCarrello"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/txtListId"
+        android:layout_toEndOf="@+id/txtListIdCarrello"
         android:layout_row="1"
         android:layout_column="0" />
 
@@ -33,23 +33,23 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="ciao"
-        android:id="@+id/txtListNome"
+        android:id="@+id/txtListNomeCarrello"
         android:layout_row="1"
         android:layout_column="1"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/txtListPrezzo" />
+        android:layout_alignStart="@+id/txtListPrezzoCarrello" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtListPrezzo"
+        android:id="@+id/txtListPrezzoCarrello"
         android:text="prezzo"
         android:layout_gravity="bottom"
         android:layout_row="2"
         android:layout_column="1"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/imgListImmagine"
+        android:layout_toEndOf="@+id/imgListImmagineCarrello"
         android:layout_marginStart="41dp" />
 
 

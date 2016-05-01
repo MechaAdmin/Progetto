@@ -6,6 +6,7 @@
         android:id="@+id/menuModifica"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="modifica"
+
         app:showAsAction="always" />
 
 </menu>

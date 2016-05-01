@@ -1,8 +1,10 @@
 package com.example.riccardo.hermes;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Prodotto {
+public class Prodotto implements Parcelable{
     private String nome;
     private String prezzo;
     private String descrizione;
@@ -16,6 +18,16 @@ public class Prodotto {
         this.id = id;
         this.urlImmagine = urlImmagine;
         this.venditore = venditore;
+    }
+    public Prodotto(Parcel in){
+        String[] data = new String[6];
+        in.readStringArray(data);
+        this.nome = data[0];
+        this.prezzo = data[1];
+        this.descrizione = data[2];
+        this.id = data[3];
+        this.urlImmagine = data[4];
+        this.venditore = data[5];
     }
 
     public String getNome() {
@@ -42,29 +54,31 @@ public class Prodotto {
         return venditore;
     }
 
-    public void setVenditore(String venditore) {
-        this.venditore = venditore;
+
+
+    @Override
+    public int describeContents(){
+        return 0;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[] {this.nome,
+                this.prezzo,
+                this.descrizione,
+                this.id,
+                this.urlImmagine,
+                this.venditore});
     }
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Prodotto createFromParcel(Parcel in) {
+            return new Prodotto(in);
+        }
 
-    public void setPrezzo(String prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setUrlImmagine(String urlImmagine) {
-        this.urlImmagine = urlImmagine;
-    }
+        public Prodotto[] newArray(int size) {
+            return new Prodotto[size];
+        }
+    };
 
 }
 

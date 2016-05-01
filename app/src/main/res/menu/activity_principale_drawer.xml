@@ -26,6 +26,12 @@
             android:id="@+id/nav_impostazioni"
             android:icon="@drawable/ic_menu_manage"
             android:title="Impostazioni" />
+        <item
+            android:id="@+id/nav_carrello"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Carrello" />
+
+
     </group>
 
 </menu>

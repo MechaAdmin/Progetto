@@ -26,9 +26,11 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.annotation.Target;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class dettaglio_prodotto extends AppCompatActivity {
@@ -36,17 +38,25 @@ public class dettaglio_prodotto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dettaglio_prodotto);
-        Intent intent = getIntent();
+
         TextView nomeProdotto = (TextView)findViewById(R.id.txtDettaglioNome);
         TextView prezzo = (TextView)findViewById(R.id.txtDettaglioPrezzo);
         TextView descrizione = (TextView)findViewById(R.id.txtDettaglioDescrizione);
         Button contattaVenditore = (Button)findViewById(R.id.btnDettaglioContattaVenditore);
+        Button aggiungiPreferiti = (Button)findViewById(R.id.btnPreferiti);
+        Button aggiungiCarrello = (Button)findViewById(R.id.btnCarrello);
         ImageView imgProdotto = (ImageView)findViewById(R.id.imgDettaglioImmagine);
-        nomeProdotto.setText(intent.getStringExtra("nome"));
-        prezzo.setText(intent.getStringExtra("prezzo"));
-        descrizione.setText(intent.getStringExtra("descrizione"));
-        final String mail = intent.getStringExtra("venditore");
-        Picasso.with(dettaglio_prodotto.this).load(intent.getStringExtra("urlImmagine")).into(imgProdotto);
+
+        Bundle data = getIntent().getExtras();
+        final Prodotto p = data.getParcelable("prodotto");
+        nomeProdotto.setText(p.getNome());
+        prezzo.setText(p.getPrezzo());
+        descrizione.setText(p.getDescrizione());
+        final String mail = p.getVenditore();
+        Picasso.with(dettaglio_prodotto.this).load(p.getUrlImmagine()).into(imgProdotto);
+
+
+
         contattaVenditore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +66,12 @@ public class dettaglio_prodotto extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        aggiungiCarrello.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                SingletonCarrello.getInstance().getCarrello().add(p);
+            }
+        });
+
     }
 
 }

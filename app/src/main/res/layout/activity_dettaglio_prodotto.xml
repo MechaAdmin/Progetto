@@ -85,6 +85,24 @@
         android:layout_below="@+id/textView8"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preferiti"
+        android:id="@+id/btnPreferiti"
+        android:layout_above="@+id/btnDettaglioContattaVenditore"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carrello"
+        android:id="@+id/btnCarrello"
+        android:layout_above="@+id/btnDettaglioContattaVenditore"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
 

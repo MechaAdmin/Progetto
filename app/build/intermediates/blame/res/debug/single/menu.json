@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/menu/activity_principale_drawer.xml",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/menu/activity_principale_drawer.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_principale_drawer.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\menu\\activity_principale_drawer.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/menu/search_toolbar.xml",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/menu/search_toolbar.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\menu\\search_toolbar.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\menu\\search_toolbar.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/build/intermediates/res/merged/debug/menu/toolbar_modifica_profilo.xml",
-        "source": "/home/riccardo/Scrivania/ProgettoProg3/Progetto/app/src/main/res/menu/toolbar_modifica_profilo.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\menu\\toolbar_modifica_profilo.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\menu\\toolbar_modifica_profilo.xml"
     }
 ]

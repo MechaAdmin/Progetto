@@ -11,6 +11,7 @@ import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -115,6 +116,10 @@ public class Principale extends AppCompatActivity
         }else if (id == R.id.nav_preferiti) {
             Fragment preferiti = new Preferiti();
             fragmentManager.beginTransaction().replace(R.id.container, preferiti).commit();
+        } else if (id == R.id.nav_carrello){
+
+            Fragment carrello = new Carrello();
+            fragmentManager.beginTransaction().replace(R.id.container, carrello).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -160,6 +165,7 @@ public class Principale extends AppCompatActivity
                     JSONArray informazioni = jsonObj.getJSONArray("result");
                     JSONObject c = informazioni.getJSONObject(0);
                     mailCliente = c.getString("mail");
+                    //Log.d("immagine", c.getString("immagine"));
                     Picasso.with(Principale.this).invalidate(c.getString("immagine"));
                     Picasso.with(Principale.this).load(c.getString("immagine")).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE).into(profiloImg);
                 }catch (JSONException e){

@@ -10,8 +10,6 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -98,17 +96,8 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             {
 
                 Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
-                String nome = p.getNome();
-                String prezzo = p.getPrezzo();
-                String urlImmagine = p.getUrlImmagine();
-                String descrizione = p.getDescrizione();
-                String venditore = p.getVenditore();
                 Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
-                intent.putExtra("nome", nome);
-                intent.putExtra("prezzo", prezzo);
-                intent.putExtra("urlImmagine", urlImmagine);
-                intent.putExtra("descrizione", descrizione);
-                intent.putExtra("venditore", venditore);
+                intent.putExtra("prodotto",p);
                 startActivity(intent);
             }
         });
