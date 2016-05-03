@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -43,9 +44,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
     ListAdapter adp;
     ArrayList<Prodotto> listInVendita;
     ArrayList<Prodotto> listVenduti;
-    int inizioRigaQuery = 0;
-    int numRigheQuery = 3;
-    Boolean flag_loading = false;
+    Boolean toolbar = true;
     String mail;
     String jsonCliente;
     @Override
@@ -62,6 +61,9 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
 
         Intent intent = getIntent();
         jsonCliente = intent.getStringExtra("json");
+        if(intent.getStringExtra("toolbar") != null){
+            toolbar = false;
+        }
         try{
             JSONObject jsonObj = new JSONObject(jsonCliente);
             JSONArray informazioni = jsonObj.getJSONArray("result");
@@ -83,11 +85,33 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         spec.setContent(R.id.tabOggettiVenduti);
         spec.setIndicator("Prodotti Venduti");
         host.addTab(spec);
-        getJson(inizioRigaQuery,numRigheQuery);
+        getJson();
+        listViewInVendita.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id)
+            {
+                if(!toolbar){
+                    Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
+                    Intent intent = new Intent(Profilo.this, dettaglio_prodotto.class);
+                    intent.putExtra("prodotto",p);
+                    startActivity(intent);
+                }else{
+                    Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
+                    Intent intent = new Intent(Profilo.this, modifica_prodotto.class);
+                    intent.putExtra("prodotto",p);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_modifica_profilo, menu);
+        if(toolbar){
+            getMenuInflater().inflate(R.menu.toolbar_modifica_profilo, menu);
+        }
+
         return true;
     }
     @Override
@@ -107,7 +131,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         return true;
     }
 
-    private void getJson(int i,int f) {
+    private void getJson() {
         class GetURLs extends AsyncTask<String,Void,String> {
 
             @Override
@@ -122,16 +146,16 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
                     JSONObject jsonObject = new JSONObject(s);
                     JSONArray stringJson = jsonObject.getJSONArray("result");
                     for(int i=0;i< stringJson.length();i++){
-                        String prezzo = stringJson.getJSONObject(i).getString("prezzo") + "€";
+                        String prezzo = stringJson.getJSONObject(i).getString("prezzo");
                         String nome = stringJson.getJSONObject(i).getString("nomeProdotto");
                         String id = stringJson.getJSONObject(i).getString("id");
                         String descrizione = stringJson.getJSONObject(i).getString("descrizione");
                         String urlImmagine = stringJson.getJSONObject(i).getString("immagine");
-
-                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine,"");
+                        String venditore = stringJson.getJSONObject(i).getString("venditore");
+                        String categoria = stringJson.getJSONObject(i).getString("categoria");
+                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine,venditore,categoria);
                         adp.add(p);
                     }
-                    flag_loading = false;
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -163,7 +187,6 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         }
         GetURLs gu = new GetURLs();
         gu.execute("http://MechaVendor.16mb.com/jsonProdottiInVendita.php?mail="+mail);
-        inizioRigaQuery = inizioRigaQuery+numRigheQuery ;
     }
 
 }

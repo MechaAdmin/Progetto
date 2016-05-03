@@ -13,8 +13,10 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +35,8 @@ public class Vendita extends Fragment {
     private String nomeProdotto;
     private String prezzo;
     private String descrizione;
+    private String categoria;
     private Button btnInsVendita;
-    private Button btnCaricaImmagine;
     private ImageView immagine;
     private Bitmap bitmap;
     private String mail;
@@ -45,9 +47,12 @@ public class Vendita extends Fragment {
         txtPrezzo = (TextView)fragmentView.findViewById(R.id.txtVenditaPrezzo);
         txtDescrizione = (TextView)fragmentView.findViewById(R.id.txtVenditaDescrizione);
         btnInsVendita = (Button)fragmentView.findViewById(R.id.btnConfermaModifica);
-        btnCaricaImmagine = (Button)fragmentView.findViewById(R.id.btnVenditaCaricaImmagine);
         immagine = (ImageView)fragmentView.findViewById(R.id.imgVenditaImmagine);
-        btnCaricaImmagine.setOnClickListener(new View.OnClickListener() {
+        final Spinner spinner = (Spinner)fragmentView.findViewById(R.id.spinnerCategoriaVendita);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinnerVendita, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        immagine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -61,6 +66,7 @@ public class Vendita extends Fragment {
                 nomeProdotto = txtNome.getText().toString();
                 prezzo = txtPrezzo.getText().toString();
                 descrizione = txtDescrizione.getText().toString();
+                categoria = spinner.getSelectedItem().toString();
                 uploadDati();
             }
         });
@@ -119,6 +125,7 @@ public class Vendita extends Fragment {
             data.put("nomeProdotto",nomeProdotto);
             data.put("prezzo",prezzo);
             data.put("descrizione",descrizione);
+            data.put("categoria",categoria);
             data.put("venditore",mail);
             String result = rh.sendPostRequest("http://mechavendor.16mb.com/uploadProdotti.php",data);
 

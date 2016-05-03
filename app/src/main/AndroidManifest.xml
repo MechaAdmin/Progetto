@@ -25,7 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Profilo" />
         <activity android:name=".dettaglio_prodotto" />
-        <activity android:name=".ModificaCliente"></activity>
+        <activity android:name=".ModificaCliente" />
+        <activity android:name=".modifica_prodotto"></activity>
     </application>
 
 </manifest>

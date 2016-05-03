@@ -86,6 +86,31 @@
         android:layout_alignParentEnd="true" />
 
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profilo Venditore"
+        android:id="@+id/btnDettaglioProfiloVenditore"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/txtDettaglioNome"
+        android:layout_above="@+id/btnDettaglioContattaVenditore" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aggiungi al Carrello"
+        android:id="@+id/btnCarrello"
+        android:layout_above="@+id/btnDettaglioProfiloVenditore"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aggiungi ai Preferiti"
+        android:id="@+id/btnAggiungiPreferiti"
+        android:layout_below="@+id/txtDettaglioDescrizione"
+        android:layout_alignParentEnd="true" /><![CDATA[
+=======
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,15 +119,9 @@
         android:layout_above="@+id/btnDettaglioContattaVenditore"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carrello"
-        android:id="@+id/btnCarrello"
-        android:layout_above="@+id/btnDettaglioContattaVenditore"
-        android:layout_alignParentStart="true" />
+    >>>>>>> origin/master
 
 
+]]>
 </RelativeLayout>
 

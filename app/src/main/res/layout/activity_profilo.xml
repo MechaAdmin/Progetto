@@ -9,12 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.riccardo.hermes.Profilo">
 
-    <ImageView
+
+    <com.github.siyamed.shapeimageview.CircularImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imgProfiloImmagine"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"

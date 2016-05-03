@@ -38,7 +38,7 @@ public class Principale extends AppCompatActivity
 
     private ImageView profiloImg;
     private final String infoCliente = "http://mechavendor.16mb.com/getCliente.php?username=";
-    String username;
+    static String username;
     String JSONcliente;
     String mailCliente;
     @Override
@@ -46,7 +46,9 @@ public class Principale extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principale);
         Intent intent = getIntent();
-        username = intent.getStringExtra(Login.USER_NAME);
+        if(intent.getStringExtra(Login.USER_NAME) != null){
+            username = intent.getStringExtra(Login.USER_NAME);
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -126,7 +128,7 @@ public class Principale extends AppCompatActivity
         return true;
     }
 
-    private void OttieniJson(String url) {
+    public void OttieniJson(String url) {
         class GetJSON extends AsyncTask<String, Void, String> {
 
             @Override
@@ -177,8 +179,4 @@ public class Principale extends AppCompatActivity
         gj.execute(url);
     }
 
-   public void onRestart() {
-       super.onRestart();
-       OttieniJson(infoCliente + username);
-   }
 }

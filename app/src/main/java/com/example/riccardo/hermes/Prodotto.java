@@ -11,16 +11,18 @@ public class Prodotto implements Parcelable{
     private String id;
     private String urlImmagine;
     private String venditore;
-    public Prodotto(String nome, String prezzo, String descrizione, String id, String urlImmagine,String venditore) {
+    private String categoria;
+    public Prodotto(String nome, String prezzo, String descrizione, String id, String urlImmagine,String venditore,String categoria) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.descrizione = descrizione;
         this.id = id;
         this.urlImmagine = urlImmagine;
         this.venditore = venditore;
+        this.categoria = categoria;
     }
     public Prodotto(Parcel in){
-        String[] data = new String[6];
+        String[] data = new String[7];
         in.readStringArray(data);
         this.nome = data[0];
         this.prezzo = data[1];
@@ -28,6 +30,7 @@ public class Prodotto implements Parcelable{
         this.id = data[3];
         this.urlImmagine = data[4];
         this.venditore = data[5];
+        this.categoria = data[6];
     }
 
     public String getNome() {
@@ -53,6 +56,9 @@ public class Prodotto implements Parcelable{
     public String getVenditore() {
         return venditore;
     }
+    public String getCategoria() {
+        return categoria;
+    }
 
 
 
@@ -68,7 +74,8 @@ public class Prodotto implements Parcelable{
                 this.descrizione,
                 this.id,
                 this.urlImmagine,
-                this.venditore});
+                this.venditore,
+                this.categoria});
     }
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Prodotto createFromParcel(Parcel in) {
@@ -81,4 +88,3 @@ public class Prodotto implements Parcelable{
     };
 
 }
-

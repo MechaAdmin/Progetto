@@ -32,6 +32,7 @@
         <activity android:name="com.example.riccardo.hermes.Profilo" />
         <activity android:name="com.example.riccardo.hermes.dettaglio_prodotto" />
         <activity android:name="com.example.riccardo.hermes.ModificaCliente" />
+        <activity android:name="com.example.riccardo.hermes.modifica_prodotto" />
     </application>
 
 </manifest>

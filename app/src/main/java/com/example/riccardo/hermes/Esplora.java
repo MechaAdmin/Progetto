@@ -22,9 +22,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.SearchManager;
@@ -54,7 +56,9 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     ListView listView;
     int inizioRigaQuery = 0;
     int numRigheQuery = 3;
+    Spinner s;
     String ricerca = "";
+    String categoria = "All";
     Boolean flag_loading = false;
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -64,16 +68,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
         listView.setAdapter(adp);
         getJson(inizioRigaQuery,numRigheQuery,"");
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-                                           int pos, long id) {
-                Prodotto p  =(Prodotto)arg0.getAdapter().getItem(pos);
-                dbPreferiti db = new dbPreferiti(getActivity());
-                db.addProdotto(p);
-                return true;
-            }
-        });
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
             }
@@ -114,7 +108,12 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         getActivity().getMenuInflater().inflate(R.menu.search_toolbar, menu);
         MenuItem myActionMenuItem = menu.findItem( R.id.searchProdotti);
         SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+        MenuItem spinner = menu.findItem( R.id.SpinnerCerca);
+        s = (Spinner)spinner.getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinnerCerca, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setAdapter(adapter);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -125,9 +124,26 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                 adp.clear();
                 inizioRigaQuery = 0;
                 getJson(inizioRigaQuery, numRigheQuery, newText);
+                categoria = s.getSelectedItem().toString();
                 ricerca = newText;
                 return true;
             }
+        });
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                adp.clear();
+                inizioRigaQuery = 0;
+                categoria = parentView.getItemAtPosition(position).toString();
+                getJson(inizioRigaQuery, numRigheQuery, ricerca);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
         });
     }
 
@@ -149,13 +165,14 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                     JSONObject jsonObject = new JSONObject(s);
                     JSONArray stringJson = jsonObject.getJSONArray("result");
                     for(int i=0;i<stringJson.length();i++){
-                        String prezzo = stringJson.getJSONObject(i).getString("prezzo") + "€";
+                        String prezzo = stringJson.getJSONObject(i).getString("prezzo");
                         String nome = stringJson.getJSONObject(i).getString("nomeProdotto");
                         String id = stringJson.getJSONObject(i).getString("id");
                         String descrizione = stringJson.getJSONObject(i).getString("descrizione");
                         String urlImmagine = stringJson.getJSONObject(i).getString("immagine");
                         String venditore = stringJson.getJSONObject(i).getString("venditore");
-                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine,venditore);
+                        String categoria = stringJson.getJSONObject(i).getString("categoria");
+                        Prodotto p = new Prodotto(nome,prezzo,descrizione,id,urlImmagine,venditore,categoria);
                         adp.add(p);
                     }
 
@@ -171,10 +188,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
                     URL url = new URL(strings[0]);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();
-
-
                     bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
                     String json;
                     while((json = bufferedReader.readLine())!= null){
                         sb.append(json+"\n");
@@ -188,7 +202,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             }
         }
         GetURLs gu = new GetURLs();
-        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?condizione="+condizione +"&inizio="+i+"&fine="+f);
+        gu.execute("http://MechaVendor.16mb.com/jsonProdottiList.php?condizione="+condizione +"&inizio="+i+"&fine="+f+"&categoria="+categoria);
         inizioRigaQuery = inizioRigaQuery + numRigheQuery;
     }
 }

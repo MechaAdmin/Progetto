@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,47 +21,43 @@ import java.util.ArrayList;
  * Created by tomma on 27/04/2016.
  */
 public class Carrello extends Fragment {
-    ListAdapterCarrello adp;
+    ListAdapter adp;
     ArrayList<Prodotto> carrello;
 
     ListView listView;
     View fragmentView;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fragmentView =  inflater.inflate(R.layout.fragment_carrello, null);
+        fragmentView = inflater.inflate(R.layout.fragment_carrello, null);
 
         //Riprendo il carrello
         carrello = SingletonCarrello.getInstance().getCarrello();
-        adp = new ListAdapterCarrello(getActivity(),carrello,getActivity());
+        adp = new ListAdapter(getActivity(), carrello, getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listCarrello);
         listView.setAdapter(adp);
-
-
-
-
-
-
-
-
+        TextView totale = (TextView) fragmentView.findViewById(R.id.txtTotaleCarrello);
+        float tot = 0;
+        for (int i = 0; i < carrello.size(); i++) {
+            tot += Float.valueOf(carrello.get(i).getPrezzo());
+        }
+        totale.setText("Totale: " + tot + "€");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id)
-            {
-
-                Prodotto p  =(Prodotto)parent.getAdapter().getItem(position);
+                                    long id) {
+                Prodotto p = (Prodotto) parent.getAdapter().getItem(position);
                 Intent intent = new Intent(getActivity(), dettaglio_prodotto.class);
-                intent.putExtra("prodotto",p);
+                intent.putExtra("prodotto", p);
                 startActivity(intent);
             }
         });
-        return  fragmentView;
+        return fragmentView;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
-
-
 }

@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -183,6 +184,9 @@ public class ModificaCliente extends AppCompatActivity {
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(ModificaCliente.this.getApplicationContext(), s, Toast.LENGTH_LONG).show();
+                Intent Principale = new Intent(ModificaCliente.this, Principale.class);
+                startActivity(Principale);
+
             }
 
             @Override
