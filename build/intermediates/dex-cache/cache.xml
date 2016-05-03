@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="ee07783aa59eefdeacc107abf472f45f60272302">
-        <dex dex="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.siyamed-android-shape-imageview-0.9.3_00d452c4610e8665a337f36f5c5ab06519049054/classes.dex" />
-    </item>
-
-</items>
+<items version="2" />

@@ -60,6 +60,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     String ricerca = "";
     String categoria = "All";
     Boolean flag_loading = false;
+    Boolean first = true;
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView =  inflater.inflate(R.layout.fragment_esplora,null);
@@ -123,25 +124,27 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
             public boolean onQueryTextChange(String newText) {
                 adp.clear();
                 inizioRigaQuery = 0;
-                getJson(inizioRigaQuery, numRigheQuery, newText);
                 categoria = s.getSelectedItem().toString();
                 ricerca = newText;
+                getJson(inizioRigaQuery, numRigheQuery, newText);
                 return true;
             }
         });
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                adp.clear();
-                inizioRigaQuery = 0;
-                categoria = parentView.getItemAtPosition(position).toString();
-                getJson(inizioRigaQuery, numRigheQuery, ricerca);
-
+                if(first){
+                    first = false;
+                }else{
+                    adp.clear();
+                    inizioRigaQuery = 0;
+                    categoria = parentView.getItemAtPosition(position).toString();
+                    getJson(inizioRigaQuery, numRigheQuery, ricerca);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
             }
 
         });
