@@ -17,7 +17,8 @@
         android:hint="Nome Prodotto"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/txtVenditaPrezzo" />
+        android:layout_toStartOf="@+id/txtVenditaPrezzo"
+        android:layout_alignEnd="@+id/relativeLayout" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,28 +26,20 @@
         android:text="Metti in vendita"
         android:id="@+id/btnConfermaModifica"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/txtVenditaDescrizione"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/txtVenditaPrezzo" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtVenditaDescrizione"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtModificaNome"
         android:hint="Descrizione Prodotto"
-        android:layout_above="@+id/btnConfermaModifica" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/txtVenditaPrezzo"
-        android:hint="Prezzo"
-        android:layout_alignTop="@+id/txtModificaNome"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/btnConfermaModifica"
+        android:layout_toStartOf="@+id/txtVenditaPrezzo"
+        android:layout_below="@+id/spinnerCategoriaVendita"
+        android:layout_alignEnd="@+id/btnConfermaModifica"
+        android:gravity="top" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -62,14 +55,26 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             />
+
     </RelativeLayout>
 
     <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:id="@+id/spinnerCategoriaVendita"
-        android:layout_above="@+id/txtModificaNome"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/txtModificaNome"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/txtVenditaPrezzo" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/txtVenditaPrezzo"
+        android:hint="Prezzo"
+        android:layout_above="@+id/txtVenditaDescrizione"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

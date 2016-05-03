@@ -37,7 +37,9 @@
         android:layout_row="1"
         android:layout_column="1"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/txtListPrezzo" />
+        android:layout_alignStart="@+id/txtListPrezzo"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +52,8 @@
         android:layout_column="1"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/imgListImmagine"
-        android:layout_marginStart="41dp" />
+        android:layout_marginStart="41dp"
+        android:paddingTop="10dp" />
 
 
 </RelativeLayout>

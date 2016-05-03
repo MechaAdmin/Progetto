@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,31 +6,73 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.riccardo.hermes.modifica_prodotto">
+    tools:context="com.example.riccardo.hermes.Registrazione">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
         android:id="@+id/txtModificaProdottoNome"
-        android:text="xxxxxxxxx"
-        android:layout_above="@+id/btnConfermaModificaProdotto"
-        android:layout_alignParentStart="true" />
+        android:hint="Nome Prodotto"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/txtModificaProdottoPrezzo"
+        android:layout_alignEnd="@+id/relativeLayout" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conferma Modifica"
+        android:id="@+id/btnConfermaModificaProdotto"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/txtModificaProdottoPrezzo" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtModificaProdottoDescrizione"
-        android:text="xxxxxxxx"
-        android:layout_alignBottom="@+id/imgModificaProdottoImmagine"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="Descrizione Prodotto"
+        android:layout_above="@+id/btnConfermaModificaProdotto"
+        android:layout_toStartOf="@+id/txtModificaProdottoPrezzo"
+        android:layout_below="@+id/spinnerCategoriaModificaProdotto"
+        android:layout_alignEnd="@+id/btnConfermaModificaProdotto"
+        android:gravity="top" />
 
-    <Button
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conferma Modifiche"
-        android:id="@+id/btnConfermaModificaProdotto"
-        android:layout_above="@+id/btnEliminaProdotto"
+        android:id="@+id/relativeLayout"
+        android:layout_alignEnd="@+id/txtModificaProdottoPrezzo"
+        android:layout_above="@+id/txtModificaProdottoNome">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imgModificaProdottoImmagine"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            />
+
+    </RelativeLayout>
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:id="@+id/spinnerCategoriaModificaProdotto"
+        android:layout_below="@+id/txtModificaProdottoNome"
         android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/txtModificaProdottoPrezzo" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/txtModificaProdottoPrezzo"
+        android:hint="Prezzo"
+        android:layout_above="@+id/txtModificaProdottoDescrizione"
         android:layout_alignParentEnd="true" />
 
     <Button
@@ -39,32 +80,10 @@
         android:layout_height="wrap_content"
         android:text="Elimina Prodotto"
         android:id="@+id/btnEliminaProdotto"
-        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/btnConfermaModificaProdotto"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@+id/btnConfermaModificaProdotto"
+        android:layout_toStartOf="@+id/btnConfermaModificaProdotto" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/txtModificaProdottoPrezzo"
-        android:text="888"
-        android:layout_above="@+id/txtModificaProdottoNome"
-        android:layout_alignParentEnd="true" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerCategoriaModificaProdotto"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:id="@+id/imgModificaProdottoImmagine"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
