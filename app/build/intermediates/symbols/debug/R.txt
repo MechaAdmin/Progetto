@@ -630,10 +630,10 @@ int id btnAggiungiPreferiti 0x7f0e0079
 int id btnCarrello 0x7f0e0078
 int id btnConfermaAcquisto 0x7f0e00b1
 int id btnConfermaModifica 0x7f0e0087
-int id btnConfermaModificaProdotto 0x7f0e008c
+int id btnConfermaModificaProdotto 0x7f0e0089
 int id btnDettaglioContattaVenditore 0x7f0e006f
 int id btnDettaglioProfiloVenditore 0x7f0e0077
-int id btnEliminaProdotto 0x7f0e008d
+int id btnEliminaProdotto 0x7f0e008c
 int id btnRegistrazione 0x7f0e00a3
 int id butt 0x7f0e000f
 int id buttonPanel 0x7f0e004a
@@ -680,7 +680,7 @@ int id imgDettaglioImmagine 0x7f0e0070
 int id imgListImmagine 0x7f0e00ba
 int id imgListImmagineCarrello 0x7f0e00be
 int id imgModificaImmagine 0x7f0e007e
-int id imgModificaProdottoImmagine 0x7f0e0088
+int id imgModificaProdottoImmagine 0x7f0e008b
 int id imgProfiloImmagine 0x7f0e0091
 int id imgVenditaImmagine 0x7f0e00b7
 int id info 0x7f0e00ce
@@ -748,7 +748,7 @@ int id snackbar_action 0x7f0e00a9
 int id snackbar_text 0x7f0e00a8
 int id snap 0x7f0e0022
 int id spacer 0x7f0e004b
-int id spinnerCategoriaModificaProdotto 0x7f0e008b
+int id spinnerCategoriaModificaProdotto 0x7f0e008e
 int id spinnerCategoriaVendita 0x7f0e00b8
 int id split_action_bar 0x7f0e0008
 int id square 0x7f0e0011
@@ -801,8 +801,8 @@ int id txtModificaNome 0x7f0e007f
 int id txtModificaPaese 0x7f0e0086
 int id txtModificaPassword 0x7f0e007c
 int id txtModificaProdottoDescrizione 0x7f0e008a
-int id txtModificaProdottoNome 0x7f0e0089
-int id txtModificaProdottoPrezzo 0x7f0e008e
+int id txtModificaProdottoNome 0x7f0e0088
+int id txtModificaProdottoPrezzo 0x7f0e008d
 int id txtModificaUsername 0x7f0e0081
 int id txtNome 0x7f0e0099
 int id txtPassword 0x7f0e009d

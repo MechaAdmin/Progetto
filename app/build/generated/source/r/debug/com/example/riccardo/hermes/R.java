@@ -2439,10 +2439,10 @@ containing a value of this type.
         public static final int btnCarrello=0x7f0e0078;
         public static final int btnConfermaAcquisto=0x7f0e00b1;
         public static final int btnConfermaModifica=0x7f0e0087;
-        public static final int btnConfermaModificaProdotto=0x7f0e008c;
+        public static final int btnConfermaModificaProdotto=0x7f0e0089;
         public static final int btnDettaglioContattaVenditore=0x7f0e006f;
         public static final int btnDettaglioProfiloVenditore=0x7f0e0077;
-        public static final int btnEliminaProdotto=0x7f0e008d;
+        public static final int btnEliminaProdotto=0x7f0e008c;
         public static final int btnRegistrazione=0x7f0e00a3;
         public static final int butt=0x7f0e000f;
         public static final int buttonPanel=0x7f0e004a;
@@ -2489,7 +2489,7 @@ containing a value of this type.
         public static final int imgListImmagine=0x7f0e00ba;
         public static final int imgListImmagineCarrello=0x7f0e00be;
         public static final int imgModificaImmagine=0x7f0e007e;
-        public static final int imgModificaProdottoImmagine=0x7f0e0088;
+        public static final int imgModificaProdottoImmagine=0x7f0e008b;
         public static final int imgProfiloImmagine=0x7f0e0091;
         public static final int imgVenditaImmagine=0x7f0e00b7;
         public static final int info=0x7f0e00ce;
@@ -2557,7 +2557,7 @@ containing a value of this type.
         public static final int snackbar_text=0x7f0e00a8;
         public static final int snap=0x7f0e0022;
         public static final int spacer=0x7f0e004b;
-        public static final int spinnerCategoriaModificaProdotto=0x7f0e008b;
+        public static final int spinnerCategoriaModificaProdotto=0x7f0e008e;
         public static final int spinnerCategoriaVendita=0x7f0e00b8;
         public static final int split_action_bar=0x7f0e0008;
         public static final int square=0x7f0e0011;
@@ -2610,8 +2610,8 @@ containing a value of this type.
         public static final int txtModificaPaese=0x7f0e0086;
         public static final int txtModificaPassword=0x7f0e007c;
         public static final int txtModificaProdottoDescrizione=0x7f0e008a;
-        public static final int txtModificaProdottoNome=0x7f0e0089;
-        public static final int txtModificaProdottoPrezzo=0x7f0e008e;
+        public static final int txtModificaProdottoNome=0x7f0e0088;
+        public static final int txtModificaProdottoPrezzo=0x7f0e008d;
         public static final int txtModificaUsername=0x7f0e0081;
         public static final int txtNome=0x7f0e0099;
         public static final int txtPassword=0x7f0e009d;

@@ -41,6 +41,7 @@ public class modifica_prodotto extends AppCompatActivity {
     String descrizione;
     String id;
     String categoria;
+    Boolean x = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,8 +70,8 @@ public class modifica_prodotto extends AppCompatActivity {
         }
         Picasso.with(modifica_prodotto.this).load(urlImmagine).into(immagine);
         id = p.getId();
-        BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
-        imgProdotto = drawable.getBitmap();
+//        BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
+//        imgProdotto = drawable.getBitmap();
 
 
         immagine.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +96,10 @@ public class modifica_prodotto extends AppCompatActivity {
                 prezzo = txtPrezzo.getText().toString();
                 descrizione = txtDescrizione.getText().toString();
                 categoria = spinner.getSelectedItem().toString();
+                if(!x){
+                    BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
+                    imgProdotto = drawable.getBitmap();
+                }
                 uploadDati();
             }
         });
@@ -109,6 +114,7 @@ public class modifica_prodotto extends AppCompatActivity {
                 imgProdotto = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 immagine.setImageBitmap(resizeImage(imgProdotto));
                 imgProdotto = resizeImage(imgProdotto);
+                x = true;
             } catch (IOException e) {
                 Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
             }
