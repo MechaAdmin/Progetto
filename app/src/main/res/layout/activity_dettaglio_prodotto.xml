@@ -109,7 +109,8 @@
         android:text="Aggiungi ai Preferiti"
         android:id="@+id/btnAggiungiPreferiti"
         android:layout_below="@+id/txtDettaglioDescrizione"
-        android:layout_alignParentEnd="true" /><![CDATA[
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/txtDettaglioNome" /><![CDATA[
 =======
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"

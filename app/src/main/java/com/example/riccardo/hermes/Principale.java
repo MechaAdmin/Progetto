@@ -125,7 +125,7 @@ public class Principale extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.container, carrello).commit();
         } else if (id == R.id.nav_logout){
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Principale.this);
-            prefs.edit().clear().commit();
+            prefs.edit().remove("username").commit();
             Intent intent = new Intent(Principale.this,Login.class);
             startActivity(intent);
             finish();
