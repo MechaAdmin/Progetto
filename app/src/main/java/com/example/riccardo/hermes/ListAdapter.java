@@ -33,7 +33,6 @@ public class ListAdapter extends ArrayAdapter<Prodotto> {
     public View getView(int position, View convertView, ViewGroup parent)  {
         Prodotto p = getItem(position);
         if (convertView == null) {
-
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
         TextView txtNome = (TextView) convertView.findViewById(R.id.txtListNome);

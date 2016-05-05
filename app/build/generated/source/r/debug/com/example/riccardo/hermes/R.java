@@ -2406,13 +2406,14 @@ containing a value of this type.
         public static final int ic_menu_send=0x7f020050;
         public static final int ic_menu_share=0x7f020051;
         public static final int ic_menu_slideshow=0x7f020052;
-        public static final int notification_template_icon_bg=0x7f020055;
+        public static final int notification_template_icon_bg=0x7f020056;
         public static final int side_nav_bar=0x7f020053;
         public static final int userdefault=0x7f020054;
+        public static final int white=0x7f020055;
     }
     public static final class id {
         public static final int CheckTermini=0x7f0e00a0;
-        public static final int SpinnerCerca=0x7f0e00d3;
+        public static final int SpinnerCerca=0x7f0e00d4;
         public static final int action0=0x7f0e00bf;
         public static final int action_bar=0x7f0e0060;
         public static final int action_bar_activity_content=0x7f0e0000;
@@ -2503,7 +2504,7 @@ containing a value of this type.
         public static final int listProdottiInVendita=0x7f0e0097;
         public static final int list_item=0x7f0e0047;
         public static final int media_actions=0x7f0e00c2;
-        public static final int menuModifica=0x7f0e00d5;
+        public static final int menuModifica=0x7f0e00d6;
         public static final int middle=0x7f0e0038;
         public static final int mini=0x7f0e0036;
         public static final int miter=0x7f0e0013;
@@ -2511,6 +2512,7 @@ containing a value of this type.
         public static final int nav_carrello=0x7f0e00d2;
         public static final int nav_esplora=0x7f0e00cc;
         public static final int nav_impostazioni=0x7f0e00d1;
+        public static final int nav_logout=0x7f0e00d3;
         public static final int nav_oggettiAcquistati=0x7f0e00d0;
         public static final int nav_oggettiVenduti=0x7f0e00cf;
         public static final int nav_preferiti=0x7f0e00cd;
@@ -2536,7 +2538,7 @@ containing a value of this type.
         public static final int scrollIndicatorUp=0x7f0e0051;
         public static final int scrollView=0x7f0e0052;
         public static final int scrollable=0x7f0e003f;
-        public static final int searchProdotti=0x7f0e00d4;
+        public static final int searchProdotti=0x7f0e00d5;
         public static final int search_badge=0x7f0e0064;
         public static final int search_bar=0x7f0e0063;
         public static final int search_button=0x7f0e0065;
@@ -2699,7 +2701,8 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f04003c;
         public static final int select_dialog_multichoice_material=0x7f04003d;
         public static final int select_dialog_singlechoice_material=0x7f04003e;
-        public static final int support_simple_spinner_dropdown_item=0x7f04003f;
+        public static final int spinner_item=0x7f04003f;
+        public static final int support_simple_spinner_dropdown_item=0x7f040040;
     }
     public static final class menu {
         public static final int activity_principale_drawer=0x7f0f0000;

@@ -599,11 +599,12 @@ int drawable ic_menu_manage 0x7f02004f
 int drawable ic_menu_send 0x7f020050
 int drawable ic_menu_share 0x7f020051
 int drawable ic_menu_slideshow 0x7f020052
-int drawable notification_template_icon_bg 0x7f020055
+int drawable notification_template_icon_bg 0x7f020056
 int drawable side_nav_bar 0x7f020053
 int drawable userdefault 0x7f020054
+int drawable white 0x7f020055
 int id CheckTermini 0x7f0e00a0
-int id SpinnerCerca 0x7f0e00d3
+int id SpinnerCerca 0x7f0e00d4
 int id action0 0x7f0e00bf
 int id action_bar 0x7f0e0060
 int id action_bar_activity_content 0x7f0e0000
@@ -694,7 +695,7 @@ int id listProdotti 0x7f0e00b3
 int id listProdottiInVendita 0x7f0e0097
 int id list_item 0x7f0e0047
 int id media_actions 0x7f0e00c2
-int id menuModifica 0x7f0e00d5
+int id menuModifica 0x7f0e00d6
 int id middle 0x7f0e0038
 int id mini 0x7f0e0036
 int id miter 0x7f0e0013
@@ -702,6 +703,7 @@ int id multiply 0x7f0e002e
 int id nav_carrello 0x7f0e00d2
 int id nav_esplora 0x7f0e00cc
 int id nav_impostazioni 0x7f0e00d1
+int id nav_logout 0x7f0e00d3
 int id nav_oggettiAcquistati 0x7f0e00d0
 int id nav_oggettiVenduti 0x7f0e00cf
 int id nav_preferiti 0x7f0e00cd
@@ -727,7 +729,7 @@ int id scrollIndicatorDown 0x7f0e0054
 int id scrollIndicatorUp 0x7f0e0051
 int id scrollView 0x7f0e0052
 int id scrollable 0x7f0e003f
-int id searchProdotti 0x7f0e00d4
+int id searchProdotti 0x7f0e00d5
 int id search_badge 0x7f0e0064
 int id search_bar 0x7f0e0063
 int id search_button 0x7f0e0065
@@ -886,7 +888,8 @@ int layout notification_template_part_time 0x7f04003b
 int layout select_dialog_item_material 0x7f04003c
 int layout select_dialog_multichoice_material 0x7f04003d
 int layout select_dialog_singlechoice_material 0x7f04003e
-int layout support_simple_spinner_dropdown_item 0x7f04003f
+int layout spinner_item 0x7f04003f
+int layout support_simple_spinner_dropdown_item 0x7f040040
 int menu activity_principale_drawer 0x7f0f0000
 int menu search_toolbar 0x7f0f0001
 int menu toolbar_modifica_profilo 0x7f0f0002

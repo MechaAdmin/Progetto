@@ -60,7 +60,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     String ricerca = "";
     String categoria = "All";
     Boolean flag_loading = false;
-    Boolean first = true;
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView =  inflater.inflate(R.layout.fragment_esplora,null);
@@ -68,7 +67,6 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         adp = new ListAdapter(getActivity(),listData,getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
         listView.setAdapter(adp);
-        getJson(inizioRigaQuery,numRigheQuery,"");
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
             }
@@ -112,8 +110,9 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         MenuItem spinner = menu.findItem( R.id.SpinnerCerca);
         s = (Spinner)spinner.getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinnerCerca, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinnerCerca, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setPopupBackgroundResource(R.drawable.white);
         s.setAdapter(adapter);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -133,14 +132,10 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                if(first){
-                    first = false;
-                }else{
                     adp.clear();
                     inizioRigaQuery = 0;
                     categoria = parentView.getItemAtPosition(position).toString();
                     getJson(inizioRigaQuery, numRigheQuery, ricerca);
-                }
             }
 
             @Override

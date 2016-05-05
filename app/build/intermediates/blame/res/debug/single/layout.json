@@ -144,6 +144,10 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/select_dialog_multichoice_material.xml"
     },
     {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/app_bar_principale.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/layout/app_bar_principale.xml"
+    },
+    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_list_menu_item_layout.xml"
     },
@@ -152,28 +156,12 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/layout/design_navigation_menu_item.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_expanded_menu_layout.xml"
-    },
-    {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/app_bar_principale.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/layout/app_bar_principale.xml"
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
@@ -192,16 +180,28 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_template_big_media.xml"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
@@ -254,5 +254,9 @@
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/nav_header_principale.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/layout/nav_header_principale.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/layout/spinner_item.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/layout/spinner_item.xml"
     }
 ]
