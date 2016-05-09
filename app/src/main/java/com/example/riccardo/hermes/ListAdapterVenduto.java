@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.squareup.picasso.MemoryPolicy;
@@ -17,12 +16,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 /**
- * Created by riccardo on 19/04/16.
+ * Created by riccardo on 09/05/16.
  */
-public class ListAdapter extends ArrayAdapter<Prodotto> {
-    ArrayList<Prodotto> p;
+public class ListAdapterVenduto extends ArrayAdapter<ProdottoVenduto> {
+    ArrayList<ProdottoVenduto> p;
     Activity activity;
-    public ListAdapter(Context context, ArrayList<Prodotto> p, Activity activity) {
+    public ListAdapterVenduto(Context context, ArrayList<ProdottoVenduto> p, Activity activity) {
         super(context, 0, p);
         this.p = p;
         this.activity = activity;

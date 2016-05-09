@@ -1,10 +1,14 @@
 [
     {
-        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/color-v23/abc_color_highlight_material.xml"
     }
 ]

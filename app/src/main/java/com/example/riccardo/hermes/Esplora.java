@@ -92,7 +92,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         searchView.setMaxWidth(Integer.MAX_VALUE);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinnerCerca, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s.setPopupBackgroundResource(R.drawable.white);
+        //s.setPopupBackgroundResource(R.drawable.white);
         s.setAdapter(adapter);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

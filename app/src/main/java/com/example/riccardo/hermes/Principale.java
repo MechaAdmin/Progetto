@@ -39,7 +39,7 @@ public class Principale extends AppCompatActivity
     private final String PRINCIPALE_URL = "http://mechavendor.16mb.com/getCliente.php?username=";
     static String username;
     String JSONcliente;
-    String mailCliente;
+    static String mailCliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +133,8 @@ public class Principale extends AppCompatActivity
             vendita.setArguments(b);
             fragmentManager.beginTransaction().replace(R.id.container, vendita).commit();
         } else if (id == R.id.nav_oggettiAcquistati) {
+            Fragment prodottiAcquistati = new ProdottiAcquistati();
+            fragmentManager.beginTransaction().replace(R.id.container, prodottiAcquistati).commit();
 
         } else if (id == R.id.nav_oggettiVenduti) {
 

@@ -29,7 +29,9 @@ import java.util.ArrayList;
 
 public class Profilo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ListAdapter adp;
+    ListAdapterVenduto adpVenduti;
     ArrayList<Prodotto> listInVendita;
+    ArrayList<ProdottoVenduto> listVenduti;
     Boolean toolbar = true;
     String mail;
     String jsonCliente;
@@ -44,13 +46,17 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         TextView txtMail = (TextView)findViewById(R.id.txtProfiloMail);
         ImageView imgProfilo = (ImageView)findViewById(R.id.imgProfiloImmagine);
         ListView listViewInVendita = (ListView)findViewById(R.id.listProdottiInVendita);
+        ListView listViewVenduti = (ListView)findViewById(R.id.listProdottiVenduti);
 
 
         //Creo un nuovo adapter che si poggia sulla lista listInVendita
         //e aggiungo l'adapter alla listView
         listInVendita = new ArrayList<Prodotto>();
+        listVenduti = new ArrayList<ProdottoVenduto>();
+        adpVenduti = new ListAdapterVenduto(this,listVenduti,Profilo.this);
         adp = new ListAdapter(this,listInVendita,Profilo.this);
         listViewInVendita.setAdapter(adp);
+        listViewVenduti.setAdapter(adpVenduti);
 
         //recupero il json passato da Principale
         Intent intent = getIntent();
@@ -94,7 +100,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         host.addTab(spec);
 
         getJson();
-
+        getJsonVenduti();
         //creo un listener per la lista
         listViewInVendita.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -207,6 +213,71 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         //Creo un oggetto della classe appena creata e lancio il metodo execute su esso
         GetURLs gu = new GetURLs();
         gu.execute("http://MechaVendor.16mb.com/jsonProdottiInVendita.php?mail="+mail);
+    }
+    private void getJsonVenduti() {
+        class GetURLs extends AsyncTask<String,Void,String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                try{
+                    //creo l'oggetto jsonObject a partire da s e l'array stringJson
+                    JSONObject jsonObject = new JSONObject(s);
+                    JSONArray stringJson = jsonObject.getJSONArray("result");
+
+                    //per ogni elemento dell'array
+                    for(int i=0;i< stringJson.length();i++){
+                        //ricavo i dati, creo un nuovo prodotto a partire da essi
+                        //e aggiungo il prodotto all'adapter della listView
+                        String prezzo = stringJson.getJSONObject(i).getString("prezzo");
+                        String nome = stringJson.getJSONObject(i).getString("nomeProdotto");
+                        String id = stringJson.getJSONObject(i).getString("id");
+                        String descrizione = stringJson.getJSONObject(i).getString("descrizione");
+                        String urlImmagine = stringJson.getJSONObject(i).getString("immagine");
+                        String venditore = stringJson.getJSONObject(i).getString("venditore");
+                        String categoria = stringJson.getJSONObject(i).getString("categoria");
+                        String acquirente = stringJson.getJSONObject(i).getString("acquirente");
+                        String data = stringJson.getJSONObject(i).getString("dataAcquisto");
+                        ProdottoVenduto p = new ProdottoVenduto(nome,prezzo,descrizione,id,urlImmagine,venditore,categoria,acquirente,data);
+                        adpVenduti.add(p);
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(String... strings) {
+                BufferedReader bufferedReader = null;
+                try {
+                    //creo la connessione passando come paramentro l'URL della pagina php
+                    //che è stato passato alla classe dalla chiamata execute e viene ricavato con strings[0]
+                    URL url = new URL(strings[0]);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                    //ricavo la risposta della pagina php e la appendo man mano che leggo le righe
+                    //all'oggetto StringBuilder sb, infine torno la stringa ricevuta
+                    StringBuilder sb = new StringBuilder();
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String json;
+                    while((json = bufferedReader.readLine())!= null){
+                        sb.append(json+"\n");
+                    }
+                    return sb.toString().trim();
+
+                }catch(Exception e){
+                    return null;
+                }
+            }
+        }
+        //Creo un oggetto della classe appena creata e lancio il metodo execute su esso
+        GetURLs gu = new GetURLs();
+        gu.execute("http://MechaVendor.16mb.com/jsonProdottiVenduti.php?mail="+mail);
     }
 
 }
