@@ -1,19 +1,11 @@
 package com.example.riccardo.hermes;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.ProgressDialog;
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,29 +15,17 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.app.SearchManager;
-import android.support.v7.widget.SearchView;
-import android.widget.SearchView.OnQueryTextListener;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import javax.net.ssl.HttpsURLConnection;
 
 /**
  * Created by riccardo on 08/04/16.
@@ -63,7 +43,7 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
     View fragmentView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView =  inflater.inflate(R.layout.fragment_esplora,null);
-        listData = new ArrayList<Prodotto>();
+        listData = new ArrayList<>();
         adp = new ListAdapter(getActivity(),listData,getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listProdotti);
         listView.setAdapter(adp);

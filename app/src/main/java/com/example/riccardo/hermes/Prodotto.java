@@ -1,6 +1,5 @@
 package com.example.riccardo.hermes;
 
-import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -36,31 +35,22 @@ public class Prodotto implements Parcelable{
     public String getNome() {
         return nome;
     }
-
     public String getPrezzo() {
         return prezzo;
     }
-
     public String getDescrizione() {
         return descrizione;
     }
-
-    public String getId() {
-        return id;
-    }
-
+    public String getId() {return id;}
     public String getUrlImmagine() {
         return urlImmagine;
     }
-
     public String getVenditore() {
         return venditore;
     }
     public String getCategoria() {
         return categoria;
     }
-
-
 
     @Override
     public int describeContents(){
@@ -77,6 +67,7 @@ public class Prodotto implements Parcelable{
                 this.venditore,
                 this.categoria});
     }
+
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Prodotto createFromParcel(Parcel in) {
             return new Prodotto(in);

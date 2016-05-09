@@ -1,36 +1,18 @@
 package com.example.riccardo.hermes;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.annotation.Target;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class dettaglio_prodotto extends AppCompatActivity {
@@ -54,7 +36,6 @@ public class dettaglio_prodotto extends AppCompatActivity {
         prezzo.setText(p.getPrezzo());
         descrizione.setText(p.getDescrizione());
         Picasso.with(dettaglio_prodotto.this).load(p.getUrlImmagine()).into(imgProdotto);
-        final String mail = p.getVenditore();
         contattaVenditore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,13 +54,24 @@ public class dettaglio_prodotto extends AppCompatActivity {
         profiloVenditore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("venditore","venditore" + p.getVenditore());
                 jsonProfiloVenditore(p.getVenditore());
             }
         });
         aggiungiCarrello.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                SingletonCarrello.getInstance().getCarrello().add(p);
+                boolean trovato = false;
+                for(int i = 0; i<SingletonCarrello.getInstance().getCarrello().size();i++){
+                    if (SingletonCarrello.getInstance().getCarrello().get(i).getId() == p.getId()){
+                        trovato = true;
+                    }
+                }
+                if(!trovato){
+                    SingletonCarrello.getInstance().getCarrello().add(p);
+                    Toast.makeText(dettaglio_prodotto.this, "Prodotto aggiunto al carrello", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(dettaglio_prodotto.this, "Prodotto già presente nel carrello", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
