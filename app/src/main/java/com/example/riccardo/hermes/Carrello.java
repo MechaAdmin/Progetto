@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +47,7 @@ public class Carrello extends Fragment {
         adp = new ListAdapter(getActivity(), carrello, getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listCarrello);
         listView.setAdapter(adp);
-        TextView totale = (TextView) fragmentView.findViewById(R.id.txtTotaleCarrello);
+        final TextView totale = (TextView) fragmentView.findViewById(R.id.txtTotaleCarrello);
 
         for (int i = 0; i < carrello.size(); i++) {
             tot += Float.valueOf(carrello.get(i).getPrezzo());
@@ -73,7 +74,15 @@ public class Carrello extends Fragment {
                 return true;
             }
         });
-
+        Button confermaAcquisto = (Button)fragmentView.findViewById(R.id.btnConfermaAcquisto);
+        confermaAcquisto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CompletaAcquisto.class);
+                intent.putExtra("totale",tot);
+                startActivity(intent);
+            }
+        });
         return fragmentView;
     }
 

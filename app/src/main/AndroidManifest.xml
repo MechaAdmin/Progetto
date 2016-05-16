@@ -26,7 +26,8 @@
         <activity android:name=".Profilo" />
         <activity android:name=".dettaglio_prodotto" />
         <activity android:name=".ModificaCliente" />
-        <activity android:name=".modifica_prodotto"></activity>
+        <activity android:name=".modifica_prodotto" />
+        <activity android:name=".CompletaAcquisto"></activity>
     </application>
 
 </manifest>

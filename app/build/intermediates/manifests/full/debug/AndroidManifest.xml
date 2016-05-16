@@ -33,6 +33,7 @@
         <activity android:name="com.example.riccardo.hermes.dettaglio_prodotto" />
         <activity android:name="com.example.riccardo.hermes.ModificaCliente" />
         <activity android:name="com.example.riccardo.hermes.modifica_prodotto" />
+        <activity android:name="com.example.riccardo.hermes.CompletaAcquisto" />
     </application>
 
 </manifest>
