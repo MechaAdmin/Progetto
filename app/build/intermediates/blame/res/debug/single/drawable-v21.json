@@ -1,110 +1,146 @@
 [
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_send.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable-v21/ic_menu_send.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_slideshow.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable-v21/ic_menu_slideshow.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_gallery.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable-v21/ic_menu_gallery.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_manage.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable-v21/ic_menu_manage.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_camera.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable-v21/ic_menu_camera.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_share.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable-v21/ic_menu_share.xml"
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
+        "source": "C:\\Users\\tomma\\Desktop\\ProgettoProg3\\Progetto\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
+    },
+    {
+        "merged": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\home\\riccardo\\Scrivania\\Progetto\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
     }
 ]

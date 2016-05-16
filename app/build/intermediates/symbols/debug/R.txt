@@ -599,9 +599,10 @@ int drawable ic_menu_manage 0x7f02004f
 int drawable ic_menu_send 0x7f020050
 int drawable ic_menu_share 0x7f020051
 int drawable ic_menu_slideshow 0x7f020052
-int drawable notification_template_icon_bg 0x7f020055
+int drawable notification_template_icon_bg 0x7f020056
 int drawable side_nav_bar 0x7f020053
 int drawable userdefault 0x7f020054
+int drawable white 0x7f020055
 int id CheckTermini 0x7f0e00a1
 int id SpinnerCerca 0x7f0e00d6
 int id action0 0x7f0e00c1

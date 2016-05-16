@@ -27,6 +27,8 @@ public class Registrazione  extends AppCompatActivity {
     private TextView txtPassword;
     private Bitmap immagine;
     private static final String Registrazione_Url = "http://MechaVendor.16mb.com/inserimentoCliente.php";
+    private static final String CheckUsername_Url = "http://MechaVendor.16mb.com/checkUsername.php";
+    private static final String CheckMail_Url = "http://MechaVendor.16mb.com/checkMail.php";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrazione);
@@ -41,9 +43,36 @@ public class Registrazione  extends AppCompatActivity {
         txtMail = (TextView)findViewById(R.id.txtMail);
         txtPassword = (TextView)findViewById(R.id.txtPassword);
         immagine = BitmapFactory.decodeResource(getResources(),R.drawable.userdefault);
+
+        txtUsername.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus){
+                    checkUsername(txtUsername.getText().toString().trim().toLowerCase());
+                }
+            }
+        });
+        txtPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus){
+                    checkPassword(txtPassword.getText().toString().trim());
+                }
+            }
+        });
+        txtMail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus){
+                    checkEmail(txtMail.getText().toString().trim().toLowerCase());
+                }
+            }
+        });
         btnRegistrazione.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 final String nome = txtNome.getText().toString().trim().toLowerCase();
                 final String cognome = txtCognome.getText().toString().trim().toLowerCase();
                 final String username = txtUsername.getText().toString().trim().toLowerCase();
@@ -57,7 +86,10 @@ public class Registrazione  extends AppCompatActivity {
                 immagine.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                 byte[] imageBytes = baos.toByteArray();
                 String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-                registrazione(nome,cognome,username,email,password,dataNascita,indirizzo,citta,cap,encodedImage);
+                if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()){
+                    registrazione(nome,cognome,username,email,password,dataNascita,indirizzo,citta,cap,encodedImage);
+                }
+
             }
         });
     }
@@ -103,5 +135,103 @@ public class Registrazione  extends AppCompatActivity {
         RegisterUser ru = new RegisterUser();
         ru.execute(nome,cognome,username,email,password,dataNascita,indirizzo,citta,cap,immagine);
 
+
+
     }
+    private void checkUsername(String username){
+        class RegisterUser extends AsyncTask<String, Void, String>{
+            ProgressDialog loading;
+            RequestHandler ruc = new RequestHandler();
+
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(Registrazione.this, "Please Wait",null, true, true);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                if (!s.contains("ok")){
+                    Toast.makeText(getApplicationContext(),"Username non disponibile",Toast.LENGTH_LONG).show();
+                    txtUsername.setText("");
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                HashMap<String, String> data = new HashMap<String,String>();
+                data.put("username",params[0]);
+
+                String result = ruc.sendPostRequest(CheckUsername_Url,data);
+
+                return  result;
+            }
+        }
+        if (username.length() >= 3) {
+
+            RegisterUser ru = new RegisterUser();
+            ru.execute(username);
+
+        }else{
+            Toast.makeText(getApplicationContext(),"L'username deve avere almeno 3 caratteri",Toast.LENGTH_LONG).show();
+        }
+    }
+    private void checkPassword(String password){
+        String passwordPattern ="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$";
+        if (password.matches(passwordPattern)){
+            Toast.makeText(getApplicationContext(),"Password troppo semplice",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    private void checkEmail(String email){
+        class RegisterUser extends AsyncTask<String, Void, String>{
+            ProgressDialog loading;
+            RequestHandler ruc = new RequestHandler();
+
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(Registrazione.this, "Please Wait",null, true, true);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                if (!s.contains("ok")){
+                    Toast.makeText(getApplicationContext(),"Email già utilizzata",Toast.LENGTH_LONG).show();
+                    txtUsername.setText("");
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                HashMap<String, String> data = new HashMap<String,String>();
+                data.put("mail",params[0]);
+
+                String result = ruc.sendPostRequest(CheckMail_Url,data);
+
+                return  result;
+            }
+        }
+
+        String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        if (email.matches(emailPattern)){
+            RegisterUser ru = new RegisterUser();
+            ru.execute(email);
+        }else {
+            Toast.makeText(getApplicationContext(),"Mail non corretta",Toast.LENGTH_LONG).show();
+        }
+    }
+
 }

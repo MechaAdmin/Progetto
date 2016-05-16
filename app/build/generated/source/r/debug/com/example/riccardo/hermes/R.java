@@ -2406,9 +2406,10 @@ containing a value of this type.
         public static final int ic_menu_send=0x7f020050;
         public static final int ic_menu_share=0x7f020051;
         public static final int ic_menu_slideshow=0x7f020052;
-        public static final int notification_template_icon_bg=0x7f020055;
+        public static final int notification_template_icon_bg=0x7f020056;
         public static final int side_nav_bar=0x7f020053;
         public static final int userdefault=0x7f020054;
+        public static final int white=0x7f020055;
     }
     public static final class id {
         public static final int CheckTermini=0x7f0e00a1;

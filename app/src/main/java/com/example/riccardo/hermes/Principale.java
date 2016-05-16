@@ -57,13 +57,13 @@ public class Principale extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ////////////////////////////////////////////////////////////////////////////////////
+        //fatto da Android
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-        ///////////////////////////////////////////////////////////////////////////////////
+
 
         //recupero la mia navigationView che servirà da menù e setto l'activity come listner
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -219,10 +219,10 @@ public class Principale extends AppCompatActivity
                     JSONObject c = informazioni.getJSONObject(0);
                     mailCliente = c.getString("mail");
 
-                    /////////////////////////////////////////////////////////////////////////
+                    //abbiamo utilizzato la libreria picasso per inserire la foto nella imageView
                     Picasso.with(Principale.this).invalidate(c.getString("immagine"));
                     Picasso.with(Principale.this).load(c.getString("immagine")).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE).into(profiloImg);
-                    ///////////////////////////////////////////////////////////////////////////
+
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
