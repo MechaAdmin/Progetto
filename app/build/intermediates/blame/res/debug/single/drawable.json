@@ -16,20 +16,20 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/edit_user.png"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/carrello.png",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/carrello.png"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/drawable/design_snackbar_background.xml"
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/carrello.png",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/carrello.png"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/drawable/design_snackbar_background.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
@@ -38,6 +38,10 @@
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/userdefault.png",
         "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/userdefault.png"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/white.jpg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/white.jpg"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
@@ -52,24 +56,24 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/profilo.png",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/profilo.png"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/profilo.png",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/profilo.png"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/drawable/design_fab_background.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
@@ -128,12 +132,12 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
-        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",

@@ -48,9 +48,9 @@
         android:id="@+id/textView6"
         android:layout_above="@+id/txtDettaglioNome"
         android:layout_alignParentEnd="true"
-        android:paddingRight="30dp"
         android:textStyle="bold"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_marginRight="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,7 +60,8 @@
         android:layout_below="@+id/textView6"
         android:layout_alignParentEnd="true"
         android:paddingLeft="30dp"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:layout_marginRight="30dp" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -35,7 +35,7 @@ public class dettaglio_prodotto extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
         final Prodotto p = data.getParcelable("prodotto");
         nomeProdotto.setText(p.getNome());
-        prezzo.setText(p.getPrezzo());
+        prezzo.setText(p.getPrezzo() + "€");
         descrizione.setText(p.getDescrizione());
         Picasso.with(dettaglio_prodotto.this).load(p.getUrlImmagine()).into(imgProdotto);
         contattaVenditore.setOnClickListener(new View.OnClickListener() {
@@ -65,8 +65,6 @@ public class dettaglio_prodotto extends AppCompatActivity {
                 for(int i = 0; i<SingletonCarrello.getInstance().getCarrello().size();i++){
                     String x = SingletonCarrello.getInstance().getCarrello().get(i).getId();
                     String y = p.getId();
-                    Log.d("x",x);
-                    Log.d("y",y);
                     if (SingletonCarrello.getInstance().getCarrello().get(i).getId().equals(p.getId())){
                         trovato = true;
                     }
