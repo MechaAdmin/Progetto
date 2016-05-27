@@ -5,8 +5,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,10 +26,10 @@ public class dettaglio_prodotto extends AppCompatActivity {
         TextView nomeProdotto = (TextView)findViewById(R.id.txtDettaglioNome);
         TextView prezzo = (TextView)findViewById(R.id.txtDettaglioPrezzo);
         TextView descrizione = (TextView)findViewById(R.id.txtDettaglioDescrizione);
-        Button contattaVenditore = (Button)findViewById(R.id.btnDettaglioContattaVenditore);
-        Button profiloVenditore = (Button)findViewById(R.id.btnDettaglioProfiloVenditore);
-        Button aggiungiPreferiti = (Button)findViewById(R.id.btnAggiungiPreferiti);
-        Button aggiungiCarrello = (Button)findViewById(R.id.btnCarrello);
+        ImageButton contattaVenditore = (ImageButton)findViewById(R.id.btnDettaglioContattaVenditore);
+        ImageButton profiloVenditore = (ImageButton)findViewById(R.id.btnDettaglioProfiloVenditore);
+        ImageButton aggiungiPreferiti = (ImageButton)findViewById(R.id.btnAggiungiPreferiti);
+        ImageButton aggiungiCarrello = (ImageButton)findViewById(R.id.btnCarrello);
         ImageView imgProdotto = (ImageView)findViewById(R.id.imgDettaglioImmagine);
 
         Bundle data = getIntent().getExtras();
@@ -61,7 +63,11 @@ public class dettaglio_prodotto extends AppCompatActivity {
             public void onClick(View v){
                 boolean trovato = false;
                 for(int i = 0; i<SingletonCarrello.getInstance().getCarrello().size();i++){
-                    if (SingletonCarrello.getInstance().getCarrello().get(i).getId() == p.getId()){
+                    String x = SingletonCarrello.getInstance().getCarrello().get(i).getId();
+                    String y = p.getId();
+                    Log.d("x",x);
+                    Log.d("y",y);
+                    if (SingletonCarrello.getInstance().getCarrello().get(i).getId().equals(p.getId())){
                         trovato = true;
                     }
                 }

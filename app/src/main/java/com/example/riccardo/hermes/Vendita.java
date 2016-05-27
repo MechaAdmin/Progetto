@@ -52,36 +52,7 @@ public class Vendita extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.spinnerVendita, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        immagine.setImageResource(R.drawable.prodottodefault);
-        txtNome.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus){
-                    String nome = txtNome.getText().toString().trim();
-                    if (nome.length()>=3){
-
-                    }else {
-                        Toast.makeText(getActivity(),"Nome troppo corto",Toast.LENGTH_LONG).show();
-                        txtNome.setText("");
-                    }
-
-                }
-            }
-        });
-
-        txtPrezzo.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus){
-                    String checkPrezzo =  txtPrezzo.getText().toString();
-                    if (!(Double.valueOf(checkPrezzo) > 0)){
-                        Toast.makeText(getActivity(),"Il prezzo deve essere maggiore di 0",Toast.LENGTH_LONG).show();
-                        txtPrezzo.setText("");
-                    }
-                }
-
-            }
-        });
+        //immagine.setImageResource(R.drawable.prodottodefault);
         immagine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

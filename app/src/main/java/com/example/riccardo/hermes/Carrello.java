@@ -42,7 +42,7 @@ public class Carrello extends Fragment {
             checkCarrello("" + i,carrello.get(i).getId());
         }
         if (sizeCarrelloBefore != carrello.size()){
-            Toast.makeText(getActivity(),"Alcuni Prodotti sono stati eliminati perchè no sono più disponibili", Toast.LENGTH_LONG);
+            Toast.makeText(getActivity(),"Alcuni Prodotti sono stati eliminati perchè non sono più disponibili", Toast.LENGTH_LONG);
         }
         adp = new ListAdapter(getActivity(), carrello, getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listCarrello);
@@ -69,8 +69,9 @@ public class Carrello extends Fragment {
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 Prodotto p  =(Prodotto)arg0.getAdapter().getItem(pos);
-                carrello.remove(pos);
-
+                carrello.remove(p);
+                adp.remove(p);
+                listView.setAdapter(adp);
                 return true;
             }
         });

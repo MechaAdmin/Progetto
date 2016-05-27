@@ -112,10 +112,10 @@ public class Esplora extends Fragment implements NavigationView.OnNavigationItem
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    adp.clear();
-                    inizioRigaQuery = 0;
-                    categoria = parentView.getItemAtPosition(position).toString();
-                    getJson(inizioRigaQuery, numRigheQuery, ricerca);
+                adp.clear();
+                inizioRigaQuery = 0;
+                categoria = parentView.getItemAtPosition(position).toString();
+                getJson(inizioRigaQuery, numRigheQuery, ricerca);
             }
 
             @Override

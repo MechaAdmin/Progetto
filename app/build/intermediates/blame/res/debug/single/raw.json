@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/raw/imgview_hexagon.svg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/res/raw/imgview_hexagon.svg"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/raw/imgview_pentagon.svg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/res/raw/imgview_pentagon.svg"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/raw/imgview_diamond.svg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/res/raw/imgview_diamond.svg"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/raw/imgview_star.svg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/res/raw/imgview_star.svg"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/raw/imgview_octogon.svg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/res/raw/imgview_octogon.svg"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/raw/imgview_heart.svg",
+        "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/res/raw/imgview_heart.svg"
+    }
+]

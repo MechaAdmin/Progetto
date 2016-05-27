@@ -26,7 +26,9 @@
         android:layout_alignTop="@+id/imgProfiloImmagine"
         android:layout_toEndOf="@+id/imgProfiloImmagine"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +38,9 @@
         android:layout_alignBottom="@+id/imgProfiloImmagine"
         android:layout_toEndOf="@+id/imgProfiloImmagine"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TabHost
         android:layout_width="match_parent"
