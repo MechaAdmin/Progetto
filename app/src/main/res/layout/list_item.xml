@@ -27,7 +27,7 @@
         android:id="@+id/imgListImmagine"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/txtListId"
-        android:layout_row="1"
+
         android:layout_column="0" />
 
     <TextView

@@ -40,26 +40,17 @@
         android:layout_below="@+id/spinnerCategoriaVendita"
         android:layout_alignEnd="@+id/btnConfermaModifica"
         android:gravity="top" />
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout"
-        android:layout_alignEnd="@+id/txtVenditaPrezzo"
-        android:layout_above="@+id/txtModificaNome">
-
         <ImageView
+            android:src="@drawable/default_product"
             android:layout_width="wrap_content"
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:id="@+id/imgVenditaImmagine"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
+            android:layout_gravity="center"
             />
-
-    </RelativeLayout>
-
     <Spinner
         android:layout_width="200dp"
         android:layout_height="50dp"

@@ -2,12 +2,18 @@
 <resources>
     <string-array name="spinnerCerca">
         <item>All</item>
-        <item>value1</item>
-        <item>value2</item>
+        <item>Desktop</item>
+        <item>Portatili</item>
+        <item>Tablet</item>
+        <item>Smartphone</item>
+        <item>Accessori</item>
     </string-array>
     <string-array name="spinnerVendita">
-        <item>value1</item>
-        <item>value2</item>
+        <item>Desktop</item>
+        <item>Portatili</item>
+        <item>Tablet</item>
+        <item>Smartphone</item>
+        <item>Accessori</item>
     </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>

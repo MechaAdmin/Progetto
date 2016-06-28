@@ -1,11 +1,12 @@
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$raw$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/Esplora$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$override.class
+CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/Registrazione$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$id$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$menu$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
-CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$style$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$drawable$override.class
+CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$style$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$styleable$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$integer$override.class
 CHANGED,/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/riccardo/hermes/R$mipmap$override.class

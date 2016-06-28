@@ -8,7 +8,7 @@
             android:title="Esplora" />
         <item
             android:id="@+id/nav_preferiti"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_star_rate_black_18dp"
             android:title="Preferiti" />
         <item
             android:id="@+id/nav_vendi"
@@ -16,15 +16,15 @@
             android:title="Vendi" />
         <item
             android:id="@+id/nav_oggettiAcquistati"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_shopping_basket_black_18dp"
             android:title="Oggetti Acquistati" />
         <item
             android:id="@+id/nav_carrello"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_shopping_cart_black_18dp"
             android:title="Carrello" />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_exit_to_app_black_18dp"
             android:title="Logout" />
     </group>
 
