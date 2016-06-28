@@ -2,6 +2,7 @@ package com.example.riccardo.hermes;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;

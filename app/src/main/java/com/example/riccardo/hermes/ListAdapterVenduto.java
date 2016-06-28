@@ -2,6 +2,7 @@ package com.example.riccardo.hermes;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class ListAdapterVenduto extends ArrayAdapter<ProdottoVenduto> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent)  {
-        Prodotto p = getItem(position);
+        ProdottoVenduto p = getItem(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }

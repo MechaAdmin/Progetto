@@ -1,13 +1,16 @@
 package com.example.riccardo.hermes;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +31,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -55,6 +61,7 @@ public class ModificaCliente extends AppCompatActivity {
     String password;
     String paese;
     Bitmap imgProfilo;
+    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,10 +114,7 @@ public class ModificaCliente extends AppCompatActivity {
         immagine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+                selectImage();
             }
         });
         Button btnConferma = (Button)findViewById(R.id.btnConfermaModifica);
@@ -130,20 +134,73 @@ public class ModificaCliente extends AppCompatActivity {
             }
         });
     }
+    private void selectImage() {
+        final CharSequence[] items = { "Fotocamera", "Galleria",
+                "Cancel" };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Aggiungi Immagine");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if (items[item].equals("Fotocamera")) {
+                    cameraIntent();
+
+                } else if (items[item].equals("Galleria")) {
+                    galleryIntent();
+
+                } else if (items[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+    private void galleryIntent()
+    {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);//
+        startActivityForResult(Intent.createChooser(intent, "Select File"),SELECT_FILE);
+    }
+
+    private void cameraIntent()
+    {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CAMERA);
+    }
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == SELECT_FILE)
+                onSelectFromGalleryResult(data);
+            else if (requestCode == REQUEST_CAMERA)
+                onCaptureImageResult(data);
+        }
+    }
 
-            Uri filePath = data.getData();
+    private void onCaptureImageResult(Intent data) {
+        imgProfilo = (Bitmap) data.getExtras().get("data");
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        imgProfilo.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        immagine.setImageBitmap(resizeImage(imgProfilo));
+        imgProfilo = resizeImage(imgProfilo);
+
+    }
+    private void onSelectFromGalleryResult(Intent data) {
+        if (data != null) {
             try {
-                imgProfilo = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                immagine.setImageBitmap(resizeImage(imgProfilo));
-                imgProfilo = resizeImage(imgProfilo);
+                imgProfilo = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
             } catch (IOException e) {
-                Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
             }
         }
+
+        immagine.setImageBitmap(resizeImage(imgProfilo));
+        imgProfilo = resizeImage(imgProfilo);
+
     }
     public static Bitmap resizeImage(Bitmap image){
         double height = image.getHeight();

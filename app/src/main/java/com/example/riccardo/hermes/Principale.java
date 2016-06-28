@@ -135,11 +135,6 @@ public class Principale extends AppCompatActivity
         } else if (id == R.id.nav_oggettiAcquistati) {
             Fragment prodottiAcquistati = new ProdottiAcquistati();
             fragmentManager.beginTransaction().replace(R.id.container, prodottiAcquistati).commit();
-
-        } else if (id == R.id.nav_oggettiVenduti) {
-
-        } else if (id == R.id.nav_impostazioni) {
-
         }else if (id == R.id.nav_preferiti) {
             //Avvio Preferiti
             Fragment preferiti = new Preferiti();

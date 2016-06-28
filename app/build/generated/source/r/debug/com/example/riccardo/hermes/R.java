@@ -2419,7 +2419,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int CheckTermini=0x7f0e00a2;
-        public static final int SpinnerCerca=0x7f0e00d7;
+        public static final int SpinnerCerca=0x7f0e00d5;
         public static final int action0=0x7f0e00c2;
         public static final int action_bar=0x7f0e0060;
         public static final int action_bar_activity_content=0x7f0e0000;
@@ -2512,17 +2512,15 @@ containing a value of this type.
         public static final int listProdottiVenduti=0x7f0e009a;
         public static final int list_item=0x7f0e0047;
         public static final int media_actions=0x7f0e00c5;
-        public static final int menuModifica=0x7f0e00d9;
+        public static final int menuModifica=0x7f0e00d7;
         public static final int middle=0x7f0e0038;
         public static final int mini=0x7f0e0036;
         public static final int miter=0x7f0e0013;
         public static final int multiply=0x7f0e002e;
-        public static final int nav_carrello=0x7f0e00d5;
+        public static final int nav_carrello=0x7f0e00d3;
         public static final int nav_esplora=0x7f0e00cf;
-        public static final int nav_impostazioni=0x7f0e00d4;
-        public static final int nav_logout=0x7f0e00d6;
-        public static final int nav_oggettiAcquistati=0x7f0e00d3;
-        public static final int nav_oggettiVenduti=0x7f0e00d2;
+        public static final int nav_logout=0x7f0e00d4;
+        public static final int nav_oggettiAcquistati=0x7f0e00d2;
         public static final int nav_preferiti=0x7f0e00d0;
         public static final int nav_vendi=0x7f0e00d1;
         public static final int nav_view=0x7f0e0092;
@@ -2546,7 +2544,7 @@ containing a value of this type.
         public static final int scrollIndicatorUp=0x7f0e0051;
         public static final int scrollView=0x7f0e0052;
         public static final int scrollable=0x7f0e003f;
-        public static final int searchProdotti=0x7f0e00d8;
+        public static final int searchProdotti=0x7f0e00d6;
         public static final int search_badge=0x7f0e0064;
         public static final int search_bar=0x7f0e0063;
         public static final int search_button=0x7f0e0065;

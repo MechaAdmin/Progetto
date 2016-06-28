@@ -1,13 +1,16 @@
 package com.example.riccardo.hermes;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -21,6 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -40,6 +46,7 @@ public class Vendita extends Fragment {
     private ImageView immagine;
     private Bitmap bitmap;
     private String mail;
+    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView =  inflater.inflate(R.layout.fragment_vendita,null);
         mail = this.getArguments().getString("mail");
@@ -56,10 +63,8 @@ public class Vendita extends Fragment {
         immagine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+                selectImage();
+
             }
         });
         btnInsVendita.setOnClickListener(new View.OnClickListener() {
@@ -78,22 +83,74 @@ public class Vendita extends Fragment {
         });
         return fragmentView;
     }
+    private void selectImage() {
+        final CharSequence[] items = { "Fotocamera", "Galleria",
+                "Cancel" };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Aggiungi Immagine");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if (items[item].equals("Fotocamera")) {
+                    cameraIntent();
+
+                } else if (items[item].equals("Galleria")) {
+                    galleryIntent();
+
+                } else if (items[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+    private void galleryIntent()
+    {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);//
+        startActivityForResult(Intent.createChooser(intent, "Select File"),SELECT_FILE);
+    }
+
+    private void cameraIntent()
+    {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CAMERA);
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-
-            filePath = data.getData();
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
-                immagine.setImageBitmap(resizeImage(bitmap));
-                bitmap = resizeImage(bitmap);
-            } catch (IOException e) {
-                Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
-            }
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == SELECT_FILE)
+                onSelectFromGalleryResult(data);
+            else if (requestCode == REQUEST_CAMERA)
+                onCaptureImageResult(data);
         }
     }
+
+    private void onCaptureImageResult(Intent data) {
+        bitmap = (Bitmap) data.getExtras().get("data");
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+        immagine.setImageBitmap(resizeImage(bitmap));
+        bitmap = resizeImage(bitmap);
+    }
+    private void onSelectFromGalleryResult(Intent data) {
+        if (data != null) {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        immagine.setImageBitmap(resizeImage(bitmap));
+        bitmap = resizeImage(bitmap);
+    }
+
+
     public String getStringImage(Bitmap bmp){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 40, baos);

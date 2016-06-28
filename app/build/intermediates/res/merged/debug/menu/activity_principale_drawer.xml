@@ -8,24 +8,16 @@
             android:title="Esplora" />
         <item
             android:id="@+id/nav_preferiti"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_share"
             android:title="Preferiti" />
         <item
             android:id="@+id/nav_vendi"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Vendi" />
         <item
-            android:id="@+id/nav_oggettiVenduti"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Oggetti Venduti" />
-        <item
             android:id="@+id/nav_oggettiAcquistati"
             android:icon="@drawable/ic_menu_manage"
             android:title="Oggetti Acquistati" />
-        <item
-            android:id="@+id/nav_impostazioni"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Impostazioni" />
         <item
             android:id="@+id/nav_carrello"
             android:icon="@drawable/ic_menu_manage"
