@@ -4,30 +4,63 @@
     api-level="22"
     density="420dpi"
     format="7"
-    timestamp="4464236509374"
-    token="5507345050135328769" >
+    timestamp="4903097318031"
+    token="5507345050135328769"
+    verifier="R_CLASS_CHANGE" >
 
     <task
         name="javac"
-        duration="203" />
+        duration="204" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="133" />
+        duration="27" />
     <task
         name="verifier"
-        duration="18" />
+        duration="2" />
 
     <artifact
-        location="/home/riccardo/Scrivania/Progetto/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+        type="DEX" />
+    <artifact
+        location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+        type="DEX" />
+    <artifact
+        location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+        type="DEX" />
 
     <build timestamp="4464236509374" >
         <artifact
             location="/home/riccardo/Scrivania/Progetto/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="4729244548354"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/builds/debug/4729244548354/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="4903097318031"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

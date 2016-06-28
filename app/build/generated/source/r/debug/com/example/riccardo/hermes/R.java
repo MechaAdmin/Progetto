@@ -2410,12 +2410,13 @@ containing a value of this type.
         public static final int ic_menu_share=0x7f020053;
         public static final int ic_menu_slideshow=0x7f020054;
         public static final int mail=0x7f020055;
-        public static final int notification_template_icon_bg=0x7f02005b;
+        public static final int notification_template_icon_bg=0x7f02005c;
         public static final int profilo=0x7f020056;
         public static final int side_nav_bar=0x7f020057;
-        public static final int star=0x7f020058;
-        public static final int userdefault=0x7f020059;
-        public static final int white=0x7f02005a;
+        public static final int spinner=0x7f020058;
+        public static final int star=0x7f020059;
+        public static final int userdefault=0x7f02005a;
+        public static final int white=0x7f02005b;
     }
     public static final class id {
         public static final int CheckTermini=0x7f0e00a2;

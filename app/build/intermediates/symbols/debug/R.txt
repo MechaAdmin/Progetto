@@ -603,12 +603,13 @@ int drawable ic_menu_send 0x7f020052
 int drawable ic_menu_share 0x7f020053
 int drawable ic_menu_slideshow 0x7f020054
 int drawable mail 0x7f020055
-int drawable notification_template_icon_bg 0x7f02005b
+int drawable notification_template_icon_bg 0x7f02005c
 int drawable profilo 0x7f020056
 int drawable side_nav_bar 0x7f020057
-int drawable star 0x7f020058
-int drawable userdefault 0x7f020059
-int drawable white 0x7f02005a
+int drawable spinner 0x7f020058
+int drawable star 0x7f020059
+int drawable userdefault 0x7f02005a
+int drawable white 0x7f02005b
 int id CheckTermini 0x7f0e00a2
 int id SpinnerCerca 0x7f0e00d5
 int id action0 0x7f0e00c2
