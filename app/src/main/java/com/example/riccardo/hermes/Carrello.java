@@ -42,7 +42,7 @@ public class Carrello extends Fragment {
             checkCarrello("" + i,carrello.get(i).getId());
         }
         if (sizeCarrelloBefore != carrello.size()){
-            Toast.makeText(getActivity(),"Alcuni Prodotti sono stati eliminati perchè non sono più disponibili", Toast.LENGTH_LONG);
+            Toast.makeText(getActivity(),"Alcuni Prodotti sono stati eliminati perchè non sono più disponibili", Toast.LENGTH_LONG).show();
         }
         adp = new ListAdapter(getActivity(), carrello, getActivity());
         listView = (ListView) fragmentView.findViewById(R.id.listCarrello);
@@ -69,6 +69,8 @@ public class Carrello extends Fragment {
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 Prodotto p  =(Prodotto)arg0.getAdapter().getItem(pos);
+                tot -=  Float.valueOf(p.getPrezzo());
+                totale.setText("Totale: " + tot + "€");
                 carrello.remove(p);
                 adp.remove(p);
                 listView.setAdapter(adp);
@@ -79,9 +81,13 @@ public class Carrello extends Fragment {
         confermaAcquisto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CompletaAcquisto.class);
-                intent.putExtra("totale",tot);
-                startActivity(intent);
+                if(carrello.size() > 0){
+                    Intent intent = new Intent(getActivity(), CompletaAcquisto.class);
+                    intent.putExtra("totale",tot);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getActivity().getApplicationContext(),"Il carrello è vuoto",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return fragmentView;

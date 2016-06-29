@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="22"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
     density="420dpi"
     format="7"
-    timestamp="7951697317551"
+    timestamp="4166189092619"
     token="5507345050135328769" >
 
     <task
@@ -24,12 +24,17 @@
         location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/resources-debug.ap_"
         type="RESOURCES" />
 
-    <build timestamp="7692221498778" >
+    <build timestamp="2485741782424" >
         <artifact
             location="/home/riccardo/Scrivania/Progetto/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="7951697317551" >
+    <build timestamp="4046392820567" >
+        <artifact
+            location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="4166189092619" >
         <artifact
             location="/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/resources-debug.ap_"
             type="RESOURCES" />

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -13,10 +14,9 @@
     android:columnCount="1">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="250dp"
-
-        android:id="@+id/imgDettaglioImmagine"
+        android:id="@+id/imgDettaglioImmagineAcquistato"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="40dp" />
@@ -27,7 +27,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Prodotto"
         android:id="@+id/textView3"
-        android:layout_below="@+id/imgDettaglioImmagine"
+        android:layout_below="@+id/imgDettaglioImmagineAcquistato"
         android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:textSize="18dp" />
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtDettaglioNome"
+        android:id="@+id/txtDettaglioNomeAcquistato"
         android:layout_below="@+id/textView3"
         android:layout_alignParentStart="true"
         android:textSize="16dp" />
@@ -47,7 +47,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Prezzo"
         android:id="@+id/textView6"
-        android:layout_above="@+id/txtDettaglioNome"
+        android:layout_above="@+id/txtDettaglioNomeAcquistato"
         android:layout_alignParentEnd="true"
         android:textStyle="bold"
         android:textSize="18dp"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtDettaglioPrezzo"
+        android:id="@+id/txtDettaglioPrezzoAcquistato"
         android:layout_below="@+id/textView6"
         android:layout_alignParentEnd="true"
         android:paddingLeft="30dp"
@@ -70,7 +70,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Descrizione"
         android:id="@+id/textView8"
-        android:layout_below="@+id/txtDettaglioNome"
+        android:layout_below="@+id/txtDettaglioNomeAcquistato"
         android:layout_alignParentStart="true"
         android:paddingTop="10dp"
         android:textStyle="bold"
@@ -80,47 +80,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtDettaglioDescrizione"
+        android:id="@+id/txtDettaglioDescrizioneAcquistato"
+        android:textSize="16dp"
         android:layout_below="@+id/textView8"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/btnAggiungiPreferiti"
-        android:textSize="16dp" />
+        android:layout_alignParentEnd="true" />
 
-    <ImageButton
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:id="@+id/btnAggiungiPreferiti"
-        android:src="@drawable/star"
-        android:layout_alignParentBottom="true"
-        android:background="@null"
-        android:layout_alignEnd="@+id/textView8" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Data Vendita"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_below="@+id/txtDettaglioDescrizioneAcquistato"
+        android:layout_alignParentStart="true" />
 
-    <ImageButton
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:id="@+id/btnCarrello"
-        android:src="@drawable/carrello"
-        android:background="@null"
-        android:layout_alignBottom="@+id/btnAggiungiPreferiti"
-        android:layout_toEndOf="@+id/btnAggiungiPreferiti" />
-
-    <ImageButton
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:id="@+id/btnDettaglioProfiloVenditore"
-        android:src="@drawable/profilo"
-        android:background="@null"
-        android:layout_alignTop="@+id/btnCarrello"
-        android:layout_toEndOf="@+id/btnCarrello" />
-
-    <ImageButton
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:id="@+id/btnDettaglioContattaVenditore"
-        android:src="@drawable/mail"
-        android:background="@null"
-        android:layout_alignTop="@+id/btnDettaglioProfiloVenditore"
-        android:layout_toEndOf="@+id/btnDettaglioProfiloVenditore" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtDettaglioDataAcquistato"
+        android:textSize="16dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
-

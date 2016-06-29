@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class modifica_prodotto extends AppCompatActivity {
@@ -48,6 +49,8 @@ public class modifica_prodotto extends AppCompatActivity {
     String id;
     String categoria;
     Boolean x = false;
+    static Uri capturedImageUri = null;
+    File file;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +78,7 @@ public class modifica_prodotto extends AppCompatActivity {
                 break;
             }
         }
-        Picasso.with(modifica_prodotto.this).load(urlImmagine).into(immagine);
+        Picasso.with(this).load(p.getUrlImmagine()).fit().centerCrop().into(immagine);
         id = p.getId();
 //        BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
 //        imgProdotto = drawable.getBitmap();
@@ -84,10 +87,7 @@ public class modifica_prodotto extends AppCompatActivity {
         immagine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+                selectImage();
             }
         });
         btnElimina.setOnClickListener(new View.OnClickListener() {
@@ -103,10 +103,8 @@ public class modifica_prodotto extends AppCompatActivity {
                 prezzo = txtPrezzo.getText().toString();
                 descrizione = txtDescrizione.getText().toString();
                 categoria = spinner.getSelectedItem().toString();
-                if(!x){
-                    BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
-                    imgProdotto = drawable.getBitmap();
-                }
+                BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
+                imgProdotto = drawable.getBitmap();
                 uploadDati();
             }
         });
@@ -143,7 +141,29 @@ public class modifica_prodotto extends AppCompatActivity {
 
     private void cameraIntent()
     {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Calendar cal = Calendar.getInstance();
+        file = new File(Environment.getExternalStorageDirectory(), (cal.getTimeInMillis() + ".jpg"));
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        } else {
+            file.delete();
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        capturedImageUri = Uri.fromFile(file);
+
+
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, capturedImageUri);
         startActivityForResult(intent, REQUEST_CAMERA);
     }
     @Override
@@ -159,47 +179,31 @@ public class modifica_prodotto extends AppCompatActivity {
     }
 
     private void onCaptureImageResult(Intent data) {
-        imgProdotto = (Bitmap) data.getExtras().get("data");
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        imgProdotto.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
-        immagine.setImageBitmap(resizeImage(imgProdotto));
-        imgProdotto = resizeImage(imgProdotto);
+        try {
+            imgProdotto = MediaStore.Images.Media.getBitmap(this.getApplicationContext().getContentResolver(), capturedImageUri);
+            immagine.setImageBitmap(imgProdotto);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
     private void onSelectFromGalleryResult(Intent data) {
         if (data != null) {
             try {
                 imgProdotto = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
+                immagine.setImageBitmap(imgProdotto);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        immagine.setImageBitmap(resizeImage(imgProdotto));
-        imgProdotto = resizeImage(imgProdotto);
+
     }
-    public static Bitmap resizeImage(Bitmap image){
-        double height = image.getHeight();
-        double width = image.getWidth();
-        double maxTexture = 2048;
 
-
-        if(width > maxTexture || height > maxTexture) {
-            if(width > height ){
-                double scale = width - maxTexture;
-                scale = scale / width;
-                height = height - height * scale;
-                width = maxTexture;
-
-            }else{
-                double scale = height - maxTexture;
-                scale = scale / height;
-                width = width - width * scale;
-                height = maxTexture;
-            }
-        }
-        return Bitmap.createScaledBitmap(image, (int)width, (int)height, true);
-    }
     public void uploadDati(){
         class UploadDati extends AsyncTask<Bitmap,Void,String> {
 

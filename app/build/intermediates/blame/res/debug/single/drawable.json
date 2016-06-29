@@ -72,12 +72,12 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/drawable/design_fab_background.xml"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/ic_exit_to_app_black_18dp.png",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/ic_exit_to_app_black_18dp.png"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/ic_exit_to_app_black_18dp.png",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/ic_exit_to_app_black_18dp.png"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/spinner.xml",
@@ -96,16 +96,16 @@
         "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/ic_shopping_basket_black_18dp.png"
     },
     {
-        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/ic_shopping_cart_black_18dp.png",
-        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/ic_shopping_cart_black_18dp.png"
-    },
-    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
         "source": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_edit_text_material.xml"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/star.png",
         "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/star.png"
+    },
+    {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/ic_shopping_cart_black_18dp.png",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/drawable/ic_shopping_cart_black_18dp.png"
     },
     {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/drawable/ic_star_rate_black_18dp.png",

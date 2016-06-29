@@ -48,11 +48,11 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
         ListView listViewInVendita = (ListView)findViewById(R.id.listProdottiInVendita);
         ListView listViewVenduti = (ListView)findViewById(R.id.listProdottiVenduti);
 
-
         //Creo un nuovo adapter che si poggia sulla lista listInVendita
         //e aggiungo l'adapter alla listView
         listInVendita = new ArrayList<Prodotto>();
         listVenduti = new ArrayList<ProdottoVenduto>();
+
         adpVenduti = new ListAdapterVenduto(this,listVenduti,Profilo.this);
         adp = new ListAdapter(this,listInVendita,Profilo.this);
         listViewInVendita.setAdapter(adp);
@@ -123,6 +123,19 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
 
             }
         });
+
+        listViewVenduti.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id)
+            {
+
+                ProdottoVenduto p  =(ProdottoVenduto)parent.getAdapter().getItem(position);
+                Intent intent = new Intent(Profilo.this, dettaglio_acquistato.class);
+                intent.putExtra("prodottoAcquistato",p);
+                startActivity(intent);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -133,6 +146,7 @@ public class Profilo extends AppCompatActivity implements NavigationView.OnNavig
 
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

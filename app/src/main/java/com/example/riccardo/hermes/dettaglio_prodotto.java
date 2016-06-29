@@ -37,7 +37,8 @@ public class dettaglio_prodotto extends AppCompatActivity {
         nomeProdotto.setText(p.getNome());
         prezzo.setText(p.getPrezzo() + "€");
         descrizione.setText(p.getDescrizione());
-        Picasso.with(dettaglio_prodotto.this).load(p.getUrlImmagine()).into(imgProdotto);
+        //Picasso.with(dettaglio_prodotto.this).load(p.getUrlImmagine()).into(imgProdotto);
+        Picasso.with(this).load(p.getUrlImmagine()).fit().centerCrop().into(imgProdotto);
         contattaVenditore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

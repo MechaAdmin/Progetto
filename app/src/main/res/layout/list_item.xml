@@ -22,8 +22,8 @@
     <ImageView
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/imgListImmagine"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/txtListId"
@@ -41,7 +41,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/txtListPrezzo"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="80dp"
         android:textStyle="bold"
         android:textSize="18dp" />
 
@@ -60,7 +60,8 @@
         android:layout_marginStart="41dp"
         android:paddingTop="10dp"
         android:textStyle="bold"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_marginTop="10dp" />
 
 
 </RelativeLayout>

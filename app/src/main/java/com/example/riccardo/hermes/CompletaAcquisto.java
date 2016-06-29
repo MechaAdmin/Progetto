@@ -52,6 +52,8 @@ public class CompletaAcquisto extends AppCompatActivity {
             }else{
                 Toast.makeText(getApplicationContext(),"Errore",Toast.LENGTH_LONG);
             }
+            Intent intent = new Intent(CompletaAcquisto.this,Principale.class);
+            startActivity(intent);
         }
         @JavascriptInterface
         public float getTotale(){

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/logo1.png",
+        "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/mipmap-hdpi/logo1.png"
+    },
+    {
         "merged": "/home/riccardo/Scrivania/Progetto/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png",
         "source": "/home/riccardo/Scrivania/Progetto/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     }

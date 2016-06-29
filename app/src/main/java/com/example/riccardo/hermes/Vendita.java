@@ -1,18 +1,28 @@
 package com.example.riccardo.hermes;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.v4.graphics.BitmapCompat;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,11 +33,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -46,6 +59,8 @@ public class Vendita extends Fragment {
     private ImageView immagine;
     private Bitmap bitmap;
     private String mail;
+    static Uri capturedImageUri = null;
+    File file;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView =  inflater.inflate(R.layout.fragment_vendita,null);
@@ -115,8 +130,33 @@ public class Vendita extends Fragment {
 
     private void cameraIntent()
     {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Calendar cal = Calendar.getInstance();
+        file = new File(Environment.getExternalStorageDirectory(), (cal.getTimeInMillis() + ".jpg"));
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        } else {
+            file.delete();
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        capturedImageUri = Uri.fromFile(file);
+
+
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, capturedImageUri);
         startActivityForResult(intent, REQUEST_CAMERA);
+
+
+
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -131,29 +171,34 @@ public class Vendita extends Fragment {
     }
 
     private void onCaptureImageResult(Intent data) {
-        bitmap = (Bitmap) data.getExtras().get("data");
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
-        immagine.setImageBitmap(resizeImage(bitmap));
-        bitmap = resizeImage(bitmap);
+        try {
+            bitmap = MediaStore.Images.Media.getBitmap(getActivity().getApplicationContext().getContentResolver(), capturedImageUri);
+            immagine.setImageBitmap(bitmap);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
     private void onSelectFromGalleryResult(Intent data) {
         if (data != null) {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+                immagine.setImageBitmap(bitmap);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        immagine.setImageBitmap(resizeImage(bitmap));
-        bitmap = resizeImage(bitmap);
+
     }
-
-
     public String getStringImage(Bitmap bmp){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 40, baos);
+        bmp.compress(Bitmap.CompressFormat.JPEG, 50, baos);
         byte[] imageBytes = baos.toByteArray();
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
@@ -175,6 +220,9 @@ public class Vendita extends Fragment {
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(getActivity().getApplicationContext(), s, Toast.LENGTH_LONG).show();
+                FragmentManager fragmentManager = getFragmentManager();
+                Fragment esplora = new Esplora();
+                fragmentManager.beginTransaction().replace(R.id.container, esplora).commit();
             }
 
             @Override

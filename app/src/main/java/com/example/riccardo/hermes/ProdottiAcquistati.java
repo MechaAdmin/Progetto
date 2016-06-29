@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,18 @@ public class ProdottiAcquistati extends Fragment {
         ArrayList<ProdottoVenduto> listAcquistati = new ArrayList<ProdottoVenduto>();
         adp = new ListAdapterVenduto(getActivity(),listAcquistati,getActivity());
         listview.setAdapter(adp);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id)
+            {
+
+                ProdottoVenduto p  =(ProdottoVenduto)parent.getAdapter().getItem(position);
+                Intent intent = new Intent(getActivity(), dettaglio_acquistato.class);
+                intent.putExtra("prodottoAcquistato",p);
+                startActivity(intent);
+            }
+        });
         getJsonAcquistati();
         return  fragmentView;
     }

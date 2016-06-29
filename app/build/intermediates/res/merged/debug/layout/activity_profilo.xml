@@ -72,7 +72,8 @@
                     <ListView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/listProdottiInVendita" />
+                        android:id="@+id/listProdottiInVendita"
+                        android:clickable="false" />
 
                 </LinearLayout>
 
@@ -84,7 +85,8 @@
                     <ListView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/listProdottiVenduti" />
+                        android:id="@+id/listProdottiVenduti"
+                        android:clickable="false" />
 
                 </LinearLayout>
 

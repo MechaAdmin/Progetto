@@ -35,6 +35,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class ModificaCliente extends AppCompatActivity {
@@ -62,6 +63,8 @@ public class ModificaCliente extends AppCompatActivity {
     String paese;
     Bitmap imgProfilo;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
+    static Uri capturedImageUri = null;
+    File file;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,9 +108,9 @@ public class ModificaCliente extends AppCompatActivity {
             txtPassword.setText(password);
             txtPaese.setText(paese);
             //Picasso.with(ModificaCliente.this).load(urlImmagine).memoryPolicy(MemoryPolicy.NO_CACHE).into(immagine);
-            Picasso.with(ModificaCliente.this).load(urlImmagine).into(immagine);
-            BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
-            imgProfilo = drawable.getBitmap();
+            Picasso.with(this).load(urlImmagine).fit().centerCrop().into(immagine);
+//            BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
+//            imgProfilo = drawable.getBitmap();
         }catch (JSONException e) {
             e.printStackTrace();
         }
@@ -130,6 +133,8 @@ public class ModificaCliente extends AppCompatActivity {
                 mail = txtMail.getText().toString();
                 password = txtPassword.getText().toString();
                 paese = txtPaese.getText().toString();
+                BitmapDrawable drawable = (BitmapDrawable) immagine.getDrawable();
+                imgProfilo = drawable.getBitmap();
                 uploadDati();
             }
         });
@@ -166,8 +171,33 @@ public class ModificaCliente extends AppCompatActivity {
 
     private void cameraIntent()
     {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Calendar cal = Calendar.getInstance();
+        file = new File(Environment.getExternalStorageDirectory(), (cal.getTimeInMillis() + ".jpg"));
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        } else {
+            file.delete();
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        capturedImageUri = Uri.fromFile(file);
+
+
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, capturedImageUri);
         startActivityForResult(intent, REQUEST_CAMERA);
+
+
+
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -182,24 +212,31 @@ public class ModificaCliente extends AppCompatActivity {
     }
 
     private void onCaptureImageResult(Intent data) {
-        imgProfilo = (Bitmap) data.getExtras().get("data");
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        imgProfilo.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        immagine.setImageBitmap(resizeImage(imgProfilo));
-        imgProfilo = resizeImage(imgProfilo);
+        try {
+            imgProfilo = MediaStore.Images.Media.getBitmap(this.getApplicationContext().getContentResolver(), capturedImageUri);
+            immagine.setImageBitmap(imgProfilo);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
     private void onSelectFromGalleryResult(Intent data) {
         if (data != null) {
-            try {
-                imgProfilo = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+            if (data != null) {
+                try {
+                    imgProfilo = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
+                    immagine.setImageBitmap(imgProfilo);
 
-        immagine.setImageBitmap(resizeImage(imgProfilo));
-        imgProfilo = resizeImage(imgProfilo);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
 
     }
     public static Bitmap resizeImage(Bitmap image){
